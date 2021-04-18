@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>586408751421-5jdbrq1lu7h74ool8sh5hbfoa2p9f4cf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.586408751421-5jdbrq1lu7h74ool8sh5hbfoa2p9f4cf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAm3bn0VI457_w_oBeBBCgaQ7lVd2HgcPw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>586408751421</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.whitelabel.appp</string>
+	<key>PROJECT_ID</key>
+	<string>gobony-firebase</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gobony-firebase.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:586408751421:ios:6bdc3ca85da737976f1554</string>
+	<key>DATABASE_URL</key>
+	<string>https://gobony-firebase.firebaseio.com</string>
+</dict>
+</plist>

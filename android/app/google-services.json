@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "586408751421",
+    "firebase_url": "https://gobony-firebase.firebaseio.com",
+    "project_id": "gobony-firebase",
+    "storage_bucket": "gobony-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586408751421:android:4032594a8c4d08aa6f1554",
+        "android_client_info": {
+          "package_name": "com.stylist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586408751421-t318qgb6eh7qq388v8uu4ebimqsljtn4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDETJC5Ip7Acu4SLN8QQdrg1vn9gQUofzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586408751421-t318qgb6eh7qq388v8uu4ebimqsljtn4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "586408751421-5jdbrq1lu7h74ool8sh5hbfoa2p9f4cf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.whitelabel.appp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586408751421:android:6af3cb030ba69e5a6f1554",
+        "android_client_info": {
+          "package_name": "com.whitelabel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "586408751421-t318qgb6eh7qq388v8uu4ebimqsljtn4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDETJC5Ip7Acu4SLN8QQdrg1vn9gQUofzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "586408751421-t318qgb6eh7qq388v8uu4ebimqsljtn4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "586408751421-5jdbrq1lu7h74ool8sh5hbfoa2p9f4cf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.whitelabel.appp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

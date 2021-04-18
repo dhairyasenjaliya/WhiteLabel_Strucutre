@@ -1,0 +1,106 @@
+import {StyleSheet} from 'react-native';
+import {colors, fonts, SCREENWIDTH, SCREENHEIGHT} from '../../constants/styles';
+import {scale} from '../../utils/scale';
+
+export default StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.primaryColor,
+  },
+  title: {
+    padding: scale(10),
+    marginTop: scale(50),
+    marginHorizontal: scale(10),
+    color: colors.white,
+    fontSize: scale(34),
+    fontFamily: fonts.helveticaNeueMedium,
+  },
+  numberIput: {
+    marginLeft: scale(15),
+    marginTop: SCREENHEIGHT > 700 ? scale(59) : scale(30),
+    backgroundColor: colors.screenBack,
+    flexDirection: 'row',
+    borderTopLeftRadius: scale(50),
+    borderBottomLeftRadius: scale(50),
+    paddingLeft: scale(17),
+    // marginBottom: SCREENHEIGHT > 700 ? scale(45) : scale(30),
+    // shadowColor: '#000',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 8,
+    // },
+    // shadowOpacity: 0.44,
+    // shadowRadius: 10.32,
+    // elevation: 16,
+  },
+  flag: {
+    width: scale(16),
+    height: scale(16),
+    marginVertical: scale(17),
+  },
+  code: {
+    fontSize: scale(16),
+    marginVertical: scale(15),
+    marginLeft: scale(15),
+    fontFamily: fonts.robotoRegular,
+    color: colors.grayColor,
+  },
+  line: {
+    backgroundColor: colors.white,
+    width: 1,
+    height: scale(25),
+    marginLeft: scale(1),
+    marginVertical: scale(12),
+  },
+  inbox: {
+    fontSize: scale(24),
+    marginLeft: scale(15),
+    width: SCREENWIDTH,
+    // paddingTop: scale(9),
+    // fontFamily: fonts.helveticaNeueThin,
+    color: colors.white,
+    letterSpacing: 6.36,
+  },
+  // touchPad: {
+  //   backgroundColor: colors.touchpadColor,
+  //   height: SCREENHEIGHT > 700 ? scale(270) : 230,
+  //   marginTop: SCREENHEIGHT > 700 ? scale(45) : scale(30),
+  //   flexDirection: 'row',
+  //   flexWrap: 'wrap',
+  //   justifyContent: 'flex-end',
+  // },
+  // touchPadButton: {
+  //   width: SCREENWIDTH / 3,
+  //   height: scale(34),
+  //   marginTop: scale(28),
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  // },
+  // touchpadText: {
+  //   fontSize: scale(28),
+  //   color: colors.white,
+  //   fontFamily: fonts.robotoRegular,
+  // },
+  customButton: {
+    marginTop: SCREENHEIGHT > 700 ? scale(25) : scale(30),
+  },
+  enterValidNumber: {
+    color: colors.textRed,
+    marginTop: scale(10),
+    marginBottom: SCREENHEIGHT > 700 ? scale(30) : scale(2),
+    marginLeft: scale(100),
+  },
+  next: {
+    width: scale(60),
+    height: scale(60),
+    borderRadius: scale(60),
+    backgroundColor: colors.lightOrange,
+    // position: 'absolute',
+    // top: scale(120),
+    // right: scale(30),
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+    marginHorizontal: scale(20),
+  },
+});
