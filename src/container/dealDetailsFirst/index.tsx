@@ -193,7 +193,7 @@ class dealDetailsFirst extends React.Component<IProps, IState> {
 
                 <FlatList
                   data={items}
-                  renderItem={data => {
+                  renderItem={(data) => {
                     const {service = []} = data.item;
                     let index = data.index;
                     const {name = ''} = service;
@@ -345,7 +345,7 @@ class dealDetailsFirst extends React.Component<IProps, IState> {
           <FlatList
             data={timeLine}
             contentContainerStyle={styles.flatListContainer}
-            renderItem={data => {
+            renderItem={(data) => {
               let lastIndex = timeLine.length - 1;
               const {item = '', index = ''} = data;
               let checkStatus =
@@ -511,7 +511,9 @@ const mapStatsToProps = ({
   dealList,
 });
 
-export default connect(
-  mapStatsToProps,
-  {getAppointmentDetail, getAllOrder, orderCancle, getDealOrderDetail},
-)(dealDetailsFirst);
+export default connect(mapStatsToProps, {
+  getAppointmentDetail,
+  getAllOrder,
+  orderCancle,
+  getDealOrderDetail,
+})(dealDetailsFirst);

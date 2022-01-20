@@ -8,14 +8,11 @@ import {
   Image,
   Linking,
   Platform,
-  FlatList,
-  Alert,
   ActivityIndicator,
 } from 'react-native';
 import Moment from 'moment';
 import RBSheet from 'react-native-raw-bottom-sheet';
 
-import FastImage from 'react-native-fast-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
 // import { colors, fonts } from '../../constants/styles';
 // import { scale } from '../../utils/scale';
@@ -706,10 +703,9 @@ class Appointmentdetails extends React.Component<IProps, IState> {
                     styles.detailValue,
                     {color: theme.PRIMARY_TEXT_COLOR},
                   ]}>
-                  {` ${Moment(date).format('DD MMM YYYY')} at ${hour +
-                    minute +
-                    ` ` +
-                    AmOrPm}  `}
+                  {` ${Moment(date).format('DD MMM YYYY')} at ${
+                    hour + minute + ` ` + AmOrPm
+                  }  `}
                 </Text>
               </View>
               <View>
@@ -930,7 +926,7 @@ class Appointmentdetails extends React.Component<IProps, IState> {
 
             {/* Services List */}
             <RBSheet
-              ref={ref => {
+              ref={(ref) => {
                 this.RBSheet = ref;
               }}
               onClose={() => {}}
@@ -961,7 +957,8 @@ const mapStatsToProps = ({appTheme = '', orderList = [], user = []}) => ({
   user,
 });
 
-export default connect(
-  mapStatsToProps,
-  {getAppointmentDetail, getAllOrder, orderCancle},
-)(Appointmentdetails);
+export default connect(mapStatsToProps, {
+  getAppointmentDetail,
+  getAllOrder,
+  orderCancle,
+})(Appointmentdetails);

@@ -1,21 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, Platform } from 'react-native';
-import { colors } from '../../constants/styles';
+import {View, StyleSheet, Platform} from 'react-native';
+import {colors} from '../../constants/styles';
 
-import { ifIphoneX } from 'react-native-iphone-x-helper';
-import { scale } from '../../utils/scale';
+import {ifIphoneX} from 'react-native-iphone-x-helper';
+import {scale} from '../../utils/scale';
 import Tab from './Tab';
 
 const TabBar = (props: any) => {
-  const { state = {}, tabColors = [], descriptors = {}, activeTintColor, navigation = {}, style } = props;
+  const {
+    state = {},
+    tabColors = [],
+    descriptors = {},
+    activeTintColor,
+    navigation = {},
+    style,
+  } = props;
   return (
-    <View style={[{
-      flexDirection: "row",
-      justifyContent: "space-around",
-      alignItems: "center",
-
-    }, styles.container]}>
+    <View
+      style={[
+        {
+          flexDirection: 'row',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+        },
+        styles.container,
+      ]}>
       {state.routes.map((route, index) => {
         return (
           <Tab
@@ -26,14 +36,14 @@ const TabBar = (props: any) => {
             isActive={index === state.index}
             activeColors={tabColors[index]}
             inactiveColor={activeTintColor}
-            onTabPress={({ route: { name } }) => {
-              navigation.navigate(name)
+            onTabPress={({route: {name}}) => {
+              navigation.navigate(name);
             }}
           />
-        )
+        );
       })}
     </View>
-  )
+  );
 };
 
 const styles = StyleSheet.create({
@@ -68,8 +78,8 @@ const styles = StyleSheet.create({
         shadowRadius: 10.32,
       },
     }),
-  }
-})
+  },
+});
 
 TabBar.propTypes = {
   renderIcon: PropTypes.func.isRequired,

@@ -3,17 +3,19 @@ import {MIXPANEL_API_KEY} from './api-configuration';
 
 class AnalyticsManager {
   constructor() {
-    this.mixpanel = callback =>
+    this.mixpanel = (callback) =>
       Mixpanel.sharedInstanceWithToken(MIXPANEL_API_KEY)
         .then(() => callback())
-        .catch(error => console.log('Failed to initialize Mixpanel: ', error));
+        .catch((error) =>
+          console.log('Failed to initialize Mixpanel: ', error),
+        );
   }
 
   /*
   Send and event name with no properties
       event: string
    */
-  track = async event => {
+  track = async (event) => {
     this.mixpanel(() => Mixpanel.track(event));
   };
 
@@ -31,7 +33,7 @@ class AnalyticsManager {
   called, the default mixpanel id for this device, e.g getDistinctId(function(id){})
       id: Function
    */
-  getDistinctId = async callback => {
+  getDistinctId = async (callback) => {
     this.mixpanel(() => Mixpanel.getDistinctId(callback));
   };
 
@@ -56,7 +58,7 @@ class AnalyticsManager {
   by another mixpanel profile as param
       alias: string
    */
-  createAlias = async alias => {
+  createAlias = async (alias) => {
     this.mixpanel(() => Mixpanel.createAlias(alias));
   };
 
@@ -65,7 +67,7 @@ class AnalyticsManager {
   to call when a user logs in and is already registered in Mixpanel
   with this unique id
    */
-  identify = async userId => {
+  identify = async (userId) => {
     this.mixpanel(() => Mixpanel.identify(userId));
   };
 
@@ -77,7 +79,7 @@ class AnalyticsManager {
 
       event: string
    */
-  timeEvent = async event => {
+  timeEvent = async (event) => {
     this.mixpanel(() => Mixpanel.timeEvent(event));
   };
 
@@ -85,14 +87,14 @@ class AnalyticsManager {
   Register super properties
       properties: Object
    */
-  registerSuperProperties = async properties => {
+  registerSuperProperties = async (properties) => {
     this.mixpanel(() => Mixpanel.registerSuperProperties(properties));
   };
 
   /*
   Register super properties Once
    */
-  registerSuperPropertiesOnce = async properties => {
+  registerSuperPropertiesOnce = async (properties) => {
     this.mixpanel(() => Mixpanel.registerSuperPropertiesOnce(properties));
   };
 
@@ -102,7 +104,7 @@ class AnalyticsManager {
   the messages when they are sent from the Mixpanel app,
   make sure you call this right after you call `identify`
    */
-  initPushHandling = async token => {
+  initPushHandling = async (token) => {
     this.mixpanel(() => Mixpanel.initPushHandling(token));
   };
 
@@ -111,7 +113,7 @@ class AnalyticsManager {
   to the current user when this method is called, it will automatically
   create a new mixpanel profile and the user will no longer be anonymous in Mixpanel)
    */
-  set = async properties => {
+  set = async (properties) => {
     this.mixpanel(() => Mixpanel.set(properties));
   };
 
@@ -120,12 +122,12 @@ class AnalyticsManager {
   to the current user when this method is called, it will automatically
   create a new mixpanel profile and the user will no longer be anonymous in Mixpanel)
    */
-  setOnce = async properties => {
+  setOnce = async (properties) => {
     this.mixpanel(() => Mixpanel.setOnce(properties));
   };
 
   //TODO: add docs (no docs in davodesign84/react-native-mixpanel)
-  removePushDeviceToken = async deviceToken => {
+  removePushDeviceToken = async (deviceToken) => {
     this.mixpanel(() => Mixpanel.removePushDeviceToken(deviceToken));
   };
 
@@ -138,7 +140,7 @@ class AnalyticsManager {
   Track Revenue
       charge: Number
    */
-  trackCharge = async charge => {
+  trackCharge = async (charge) => {
     this.mixpanel(() => Mixpanel.trackCharge(charge));
   };
 
@@ -170,7 +172,7 @@ class AnalyticsManager {
   Add device token for push notifications
       token: string
    */
-  addPushDeviceToken = async token => {
+  addPushDeviceToken = async (token) => {
     this.mixpanel(() => Mixpanel.addPushDeviceToken(token));
   };
 

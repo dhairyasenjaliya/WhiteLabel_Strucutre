@@ -132,7 +132,4 @@ const mapStatsToProps = ({appTheme = '', user = []}) => ({
   user,
 });
 
-export default connect(
-  mapStatsToProps,
-  {},
-)(BannerDetail);
+export default connect(mapStatsToProps, {})(BannerDetail);

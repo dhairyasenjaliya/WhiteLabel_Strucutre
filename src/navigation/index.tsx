@@ -132,10 +132,7 @@ const mapStateToProps = ({user = []}) => ({
   user,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    // verifyOtp,
-    // logOut,
-  },
-)(Navigator);
+export default connect(mapStateToProps, {
+  // verifyOtp,
+  // logOut,
+})(Navigator);

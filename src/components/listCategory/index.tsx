@@ -30,9 +30,6 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    // switchTheme,
-  },
-)(ListCategory);
+export default connect(mapStateToProps, {
+  // switchTheme,
+})(ListCategory);

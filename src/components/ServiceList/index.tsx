@@ -110,7 +110,7 @@ class ServiceList extends React.Component<IProps, IState> {
     // console.log('meow=====>', category);
 
     let datassss = items
-      .filter(item => item.name.includes(searchName))
+      .filter((item) => item.name.includes(searchName))
       .map(
         ({name, duration_minutes, price, served_gender, uuid, variations}) => ({
           name,
@@ -285,13 +285,10 @@ const mapStateToProps = ({
   cartCheckout,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    addServiceInCart,
-    getAvailableStylist,
-    addServiceUuidMaster,
-    viewCart,
-    checkServiceType,
-  },
-)(ServiceList);
+export default connect(mapStateToProps, {
+  addServiceInCart,
+  getAvailableStylist,
+  addServiceUuidMaster,
+  viewCart,
+  checkServiceType,
+})(ServiceList);

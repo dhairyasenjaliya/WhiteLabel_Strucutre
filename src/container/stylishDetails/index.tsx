@@ -403,7 +403,7 @@ class stylishDetails extends React.Component<IProps, IState> {
           <CalendarStrip
             calendarAnimation={{type: 'sequence', duration: 30}}
             iconStyle={{height: 20, width: 20}}
-            onDateSelected={data => {
+            onDateSelected={(data) => {
               this.setState({selected_date: Moment(data).format('YYYY-MM-DD')});
               selected_Ids.date = Moment(data).format('YYYY-MM-DD');
               this.props.addSelectedDate(Moment(data).format('YYYY-MM-DD'));
@@ -455,24 +455,24 @@ class stylishDetails extends React.Component<IProps, IState> {
               />
             </View>
           ) : (
-              <View style={styles.contentCenter}>
-                {MORNING !== ''
-                  ? this.renderAvailbleTimes(MORNING, 'MORNING')
-                  : null}
-                {AFTERNOON !== ''
-                  ? this.renderAvailbleTimes(AFTERNOON, 'AFTERNOON')
-                  : null}
-                {EVENING !== ''
-                  ? this.renderAvailbleTimes(EVENING, 'EVENING')
-                  : null}
-                {MORNING === '' && AFTERNOON === '' && EVENING === '' && (
-                  <Image
-                    source={require('../../assets/onBoarding/onBoading.png')}
-                    style={styles.mainImage}
-                  />
-                )}
-              </View>
-            )}
+            <View style={styles.contentCenter}>
+              {MORNING !== ''
+                ? this.renderAvailbleTimes(MORNING, 'MORNING')
+                : null}
+              {AFTERNOON !== ''
+                ? this.renderAvailbleTimes(AFTERNOON, 'AFTERNOON')
+                : null}
+              {EVENING !== ''
+                ? this.renderAvailbleTimes(EVENING, 'EVENING')
+                : null}
+              {MORNING === '' && AFTERNOON === '' && EVENING === '' && (
+                <Image
+                  source={require('../../assets/onBoarding/onBoading.png')}
+                  style={styles.mainImage}
+                />
+              )}
+            </View>
+          )}
           <View
             style={[
               styles.flexRow,
@@ -522,30 +522,30 @@ class stylishDetails extends React.Component<IProps, IState> {
                 onPress={
                   selectedTime
                     ? () => {
-                      this.props.addServiceAPI(consumerId, service_add);
-                      this.setState(
-                        {
-                          timeSelectedFlag: false,
-                          selected_date: Moment(new Date()).format(
-                            'YYYY-MM-DD',
-                          ),
-                          refreshCalenderView: true,
-                          localOptionSelect: [],
-                        },
-                        () => {
-                          setTimeout(() => {
-                            // this.props.viewCart(consumerId);
-                            this.props.addSelectedTime(false);
-                            this.props.addSelectedDate(
-                              Moment(new Date()).format('YYYY-MM-DD'),
-                            );
-                          }, 200);
-                        },
-                      );
-                    }
+                        this.props.addServiceAPI(consumerId, service_add);
+                        this.setState(
+                          {
+                            timeSelectedFlag: false,
+                            selected_date: Moment(new Date()).format(
+                              'YYYY-MM-DD',
+                            ),
+                            refreshCalenderView: true,
+                            localOptionSelect: [],
+                          },
+                          () => {
+                            setTimeout(() => {
+                              // this.props.viewCart(consumerId);
+                              this.props.addSelectedTime(false);
+                              this.props.addSelectedDate(
+                                Moment(new Date()).format('YYYY-MM-DD'),
+                              );
+                            }, 200);
+                          },
+                        );
+                      }
                     : () => {
-                      alert('Please Select Time');
-                    }
+                        alert('Please Select Time');
+                      }
                 }
               />
               {/* </View> */}
@@ -611,10 +611,10 @@ class stylishDetails extends React.Component<IProps, IState> {
                         selectedTime === start
                           ? `rgba(238,117,15,0.2)`
                           : state === 'AVAILABLE'
-                            ? risk_level === 'LOW'
-                              ? colors.whitePrimary
-                              : 'rgba(255,195,197,1)'
-                            : colors.grayBorder,
+                          ? risk_level === 'LOW'
+                            ? colors.whitePrimary
+                            : 'rgba(255,195,197,1)'
+                          : colors.grayBorder,
                     },
                   ]}>
                   <Text
@@ -779,7 +779,7 @@ class stylishDetails extends React.Component<IProps, IState> {
               marginBottom: scale(40),
               marginHorizontal: scale(20),
             }}
-            renderItem={data => {
+            renderItem={(data) => {
               const {name = '', price = [], uuid = '', type = ''} = data.item;
               const {price_net = ''} = price;
               typeName = type;
@@ -938,9 +938,9 @@ class stylishDetails extends React.Component<IProps, IState> {
     const {checkServiceType = ''} = cartList;
     let type =
       checkServiceType &&
-        checkServiceType.subService &&
-        checkServiceType.subService.variations &&
-        checkServiceType.subService.variations.length !== 0
+      checkServiceType.subService &&
+      checkServiceType.subService.variations &&
+      checkServiceType.subService.variations.length !== 0
         ? true
         : false;
 
@@ -957,7 +957,7 @@ class stylishDetails extends React.Component<IProps, IState> {
 
     let converted_image =
       OTHERS &&
-      OTHERS.map(data => {
+      OTHERS.map((data) => {
         // console.log(data.url);
         let d = {
           source: {
@@ -1001,7 +1001,7 @@ class stylishDetails extends React.Component<IProps, IState> {
 
     // Best Possible Way for Object to array
     let category = _.mapValues(services, 'category');
-    let category_convert = _.map(category, value => ({value}));
+    let category_convert = _.map(category, (value) => ({value}));
     return (
       <View
         style={[
@@ -1182,12 +1182,12 @@ class stylishDetails extends React.Component<IProps, IState> {
             <FlatList
               keyExtractor={this.keyExtractor}
               data={category_convert}
-              renderItem={category_convert =>
+              renderItem={(category_convert) =>
                 this.renderServicesItem(category_convert)
               }
               horizontal
-            // numColumns={3}
-            // automaticallyAdjustContentInsets={true}
+              // numColumns={3}
+              // automaticallyAdjustContentInsets={true}
             />
           </View>
           {/* Stylist Services End */}
@@ -1225,7 +1225,7 @@ class stylishDetails extends React.Component<IProps, IState> {
             </View>
             <FlatList
               data={OTHERS}
-              renderItem={data => this.renderPhotos(data)}
+              renderItem={(data) => this.renderPhotos(data)}
               keyExtractor={this.keyExtractor}
               numColumns={3}
               automaticallyAdjustContentInsets={true}
@@ -1235,7 +1235,7 @@ class stylishDetails extends React.Component<IProps, IState> {
 
           {/* Services List */}
           <RBSheet
-            ref={ref => {
+            ref={(ref) => {
               this.RBSheet = ref;
             }}
             onClose={() => {
@@ -1373,19 +1373,16 @@ const mapStatsToProps = ({
   cartCheckout,
 });
 
-export default connect(
-  mapStatsToProps,
-  {
-    fetchStylistDetails,
-    addSelectedDate,
-    addSelectedTime,
-    addServiceAPI,
-    getAvailableTimeSlot,
-    fetchSalonDetails,
-    viewCart,
-    addServiceInCart,
-    addServiceUuidMaster,
-    getAvailableStylist,
-    checkServiceType,
-  },
-)(stylishDetails);
+export default connect(mapStatsToProps, {
+  fetchStylistDetails,
+  addSelectedDate,
+  addSelectedTime,
+  addServiceAPI,
+  getAvailableTimeSlot,
+  fetchSalonDetails,
+  viewCart,
+  addServiceInCart,
+  addServiceUuidMaster,
+  getAvailableStylist,
+  checkServiceType,
+})(stylishDetails);

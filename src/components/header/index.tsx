@@ -35,7 +35,4 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {},
-)(HomeScreenHeader);
+export default connect(mapStateToProps, {})(HomeScreenHeader);

@@ -253,7 +253,7 @@ class searchScreen extends React.Component<IProps, Istate> {
           searchedSalonList: hits,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log('err', err);
       });
   };
@@ -392,7 +392,7 @@ class searchScreen extends React.Component<IProps, Istate> {
                 <FlatList
                   data={searchedSalonList}
                   keyExtractor={this.keyExtractor}
-                  renderItem={sortedSearchData => (
+                  renderItem={(sortedSearchData) => (
                     <SearchData data={sortedSearchData} />
                   )}
                   // horizontal
@@ -404,7 +404,7 @@ class searchScreen extends React.Component<IProps, Istate> {
 
             {/* View All Tab */}
             <RBSheet
-              ref={ref => {
+              ref={(ref) => {
                 this.RBSheet = ref;
               }}
               height={scale(600)}
@@ -431,7 +431,4 @@ const mapStatsToProps = ({appTheme = '', algoliaDetail = []}) => ({
   algoliaDetail,
 });
 
-export default connect(
-  mapStatsToProps,
-  {},
-)(searchScreen);
+export default connect(mapStatsToProps, {})(searchScreen);

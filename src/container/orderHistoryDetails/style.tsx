@@ -1,6 +1,6 @@
-import { StyleSheet, Platform } from 'react-native';
-import { scale, fontScale } from '../../utils/scale';
-import { colors, fonts, SCREENHEIGHT } from '../../constants/styles';
+import {StyleSheet, Platform} from 'react-native';
+import {scale, fontScale} from '../../utils/scale';
+import {colors, fonts, SCREENHEIGHT} from '../../constants/styles';
 
 export default StyleSheet.create({
   container: {
@@ -302,7 +302,7 @@ export default StyleSheet.create({
   cancel: {
     fontSize: scale(12),
     color: colors.textRed,
-    fontFamily: fonts.helveticaNeueRegular
+    fontFamily: fonts.helveticaNeueRegular,
   },
   flatListContainer: {
     marginVertical: scale(20),

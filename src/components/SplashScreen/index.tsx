@@ -44,7 +44,4 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {},
-)(SplashScreen);
+export default connect(mapStateToProps, {})(SplashScreen);

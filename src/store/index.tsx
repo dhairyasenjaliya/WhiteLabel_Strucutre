@@ -1,5 +1,5 @@
-import { createStore, combineReducers } from 'redux';
-import { applyMiddleware } from 'redux';
+import {createStore, combineReducers} from 'redux';
+import {applyMiddleware} from 'redux';
 import apiMiddleware from '../middleware/api';
 import userReducer from './user';
 import themeReducer from './switchTheme';
@@ -14,7 +14,7 @@ import scheduleCheckoutReducer from './scheduleCheckout';
 import manageFavoriteReducer from './manageFavourites';
 import thunk from 'redux-thunk';
 
-import { persistReducer } from 'redux-persist';
+import {persistReducer} from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const rootReducer = combineReducers({

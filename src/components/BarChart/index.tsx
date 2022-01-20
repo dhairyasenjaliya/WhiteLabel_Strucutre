@@ -27,23 +27,16 @@ const BarChart = (props: any) => {
   let data = dataSend;
 
   // X scale point
-  const xDomain = data.map(item => item.label);
+  const xDomain = data.map((item) => item.label);
   const xRange = [0, graphWidth];
-  const x = d3
-    .scalePoint()
-    .domain(xDomain)
-    .range(xRange)
-    .padding(1);
+  const x = d3.scalePoint().domain(xDomain).range(xRange).padding(1);
 
   // Y scale linear
-  const maxValue = d3.max(data, d => d.value);
+  const maxValue = d3.max(data, (d) => d.value);
   const topValue = Math.ceil(maxValue / round) * round;
   const yDomain = [0, topValue];
   const yRange = [0, graphHeight];
-  const y = d3
-    .scaleLinear()
-    .domain(yDomain)
-    .range(yRange);
+  const y = d3.scaleLinear().domain(yDomain).range(yRange);
 
   // top axis and middle axis
   const middleValue = topValue / 2;
@@ -106,7 +99,7 @@ const BarChart = (props: any) => {
             ),
         )} */}
         {data.map(
-          item =>
+          (item) =>
             item.rushHour && (
               <Text
                 key={'label' + item.label}
@@ -119,7 +112,7 @@ const BarChart = (props: any) => {
             ),
         )}
         {/* bars */}
-        {data.map(item => (
+        {data.map((item) => (
           <Rect
             key={'bar' + item.label}
             x={x(item.label) - GRAPH_BAR_WIDTH / 2}
@@ -131,7 +124,7 @@ const BarChart = (props: any) => {
           />
         ))}
         {/* labels */}
-        {data.map(item => (
+        {data.map((item) => (
           <Text
             key={'label' + item.label}
             fontSize="12"

@@ -27,12 +27,7 @@ class App extends React.Component {
       true,
     );
     return (
-      <SafeAreaProvider
-      // style={{
-      //   flex: 1,
-      //   backgroundColor: PRIMARY_BACKGROUND_COLOR,
-      // }}
-      >
+      <SafeAreaProvider>
         <Provider store={store}>
           <PersistGate persistor={persistor}>
             <Navigator />

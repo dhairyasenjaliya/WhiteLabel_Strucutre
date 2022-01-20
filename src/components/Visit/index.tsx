@@ -168,9 +168,6 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    // switchTheme,
-  },
-)(VisitComponent);
+export default connect(mapStateToProps, {
+  // switchTheme,
+})(VisitComponent);

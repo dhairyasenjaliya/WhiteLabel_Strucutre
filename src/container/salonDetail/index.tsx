@@ -284,9 +284,7 @@ class salonDetail extends React.Component<IProps, IState> {
     const {traffic_distributions = ''} = salonDetail;
     // console.log('hehehehehe', JSON.stringify(traffic_distributions['MON']));
 
-    let weekDayToday = Moment(new Date())
-      .format('ddd')
-      .toUpperCase();
+    let weekDayToday = Moment(new Date()).format('ddd').toUpperCase();
     // console.log('weekDayToday', weekDayToday);
     this.setState({
       mapData: traffic_distributions && traffic_distributions[weekDayToday],
@@ -567,7 +565,7 @@ class salonDetail extends React.Component<IProps, IState> {
           // marginBottom: scale(150),
         }}
         numColumns={2}
-        renderItem={d => {
+        renderItem={(d) => {
           const {images = '', name = '', present = ''} = d.item;
           // console.log('d.item', JSON.stringify(d.item));
           // if (present) {
@@ -613,7 +611,7 @@ class salonDetail extends React.Component<IProps, IState> {
     // }
   };
 
-  changeWeekName = data => {
+  changeWeekName = (data) => {
     if (data) {
       this.setState({time: data});
 
@@ -758,14 +756,14 @@ class salonDetail extends React.Component<IProps, IState> {
           {/* <Image source={{uri: imageMain}} style={styles.imageContainer} /> */}
 
           <Carousel
-            ref={carousel => {
+            ref={(carousel) => {
               this._carousel = carousel;
             }}
             // indicatorStyle
             layout={'stack'}
             horizontal={true}
             data={imagess}
-            renderItem={data => {
+            renderItem={(data) => {
               const {url = ''} = data.item;
               return (
                 <FastImage
@@ -782,7 +780,7 @@ class salonDetail extends React.Component<IProps, IState> {
             sliderWidth={screenWidth}
             itemWidth={screenWidth}
             loop={true}
-            onSnapToItem={d => this.handleSlideChange(d)}
+            onSnapToItem={(d) => this.handleSlideChange(d)}
             enableSnap={true}
           />
 
@@ -1177,7 +1175,7 @@ class salonDetail extends React.Component<IProps, IState> {
 
           {/* View All Tab */}
           <RBSheet
-            ref={ref => {
+            ref={(ref) => {
               this.RBSheet = ref;
             }}
             height={scale(600)}
@@ -1195,7 +1193,7 @@ class salonDetail extends React.Component<IProps, IState> {
 
           {/* Time Picker */}
           <RBSheet
-            ref={ref => {
+            ref={(ref) => {
               this.TimeSheet = ref;
             }}
             height={scale(600)}
@@ -1221,7 +1219,4 @@ const mapStatsToProps = ({appTheme = '', salonDetail = []}) => ({
   salonDetail,
 });
 
-export default connect(
-  mapStatsToProps,
-  {},
-)(salonDetail);
+export default connect(mapStatsToProps, {})(salonDetail);

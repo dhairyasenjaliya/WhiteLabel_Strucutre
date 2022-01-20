@@ -19,14 +19,14 @@ import Icon from 'react-native-vector-icons/SimpleLineIcons';
 // import { scale } from '../../utils/scale';
 import styles from './style';
 import ScreenHeader from '../../components/ScreenHeader';
-import { connect } from 'react-redux';
-import { scale } from '../../utils/scale';
+import {connect} from 'react-redux';
+import {scale} from '../../utils/scale';
 import images from '../../assets/images';
 import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { colors } from '../../constants/styles';
-import { getAllMyDeal, getMyDealNextLink } from '../../store/dealList/actions';
+import {colors} from '../../constants/styles';
+import {getAllMyDeal, getMyDealNextLink} from '../../store/dealList/actions';
 import themeReducer from '../../store/switchTheme';
-import { getOrderHistoryNextLink } from '../../store/orderList/actions';
+import {getOrderHistoryNextLink} from '../../store/orderList/actions';
 
 interface IProps {
   appTheme: Object;
@@ -51,13 +51,12 @@ class OrderHistory extends React.Component<IProps, IState> {
       isLoading: true,
     };
     this.onEndReachedCalledDuringMomentum = true;
-
   }
 
   componentDidMount() {
-    const { orderList = [], appTheme, user = [] } = this.props;
-    const { myOrderHistory = [] } = orderList;
-    const { next_link = '', value = [] } = myOrderHistory;
+    const {orderList = [], appTheme, user = []} = this.props;
+    const {myOrderHistory = []} = orderList;
+    const {next_link = '', value = []} = myOrderHistory;
 
     this.setState({
       orderHistory: value,
@@ -71,9 +70,9 @@ class OrderHistory extends React.Component<IProps, IState> {
     // myOrderHistoryNext
     // console.log('ehehhehehehehehehhe morwe');
 
-    const { orderList = [], getOrderHistoryNextLink } = this.props;
-    const { orderHistoryNextLink = '' } = this.state;
-    const { myOrderHistoryNext = [], isLoadingData = '' } = orderList;
+    const {orderList = [], getOrderHistoryNextLink} = this.props;
+    const {orderHistoryNextLink = ''} = this.state;
+    const {myOrderHistoryNext = [], isLoadingData = ''} = orderList;
     let myOrderHistoryNextLink2 =
       myOrderHistoryNext && myOrderHistoryNext.next_link;
 
@@ -84,8 +83,8 @@ class OrderHistory extends React.Component<IProps, IState> {
       getOrderHistoryNextLink(orderHistoryNextLink);
     }
 
-    console.log("myOrderHistoryNextLink2", myOrderHistoryNextLink2);
-    console.log("myOrderHistoryNextValue", myOrderHistoryNextValue);
+    console.log('myOrderHistoryNextLink2', myOrderHistoryNextLink2);
+    console.log('myOrderHistoryNextValue', myOrderHistoryNextValue);
 
     if (orderHistoryNextLink !== myOrderHistoryNextLink2) {
       this.setState({
@@ -96,10 +95,10 @@ class OrderHistory extends React.Component<IProps, IState> {
   };
 
   fetchOrderHistory = () => {
-    const { orderList = [], appTheme, user = [], navigation } = this.props;
-    const { orderHistory } = this.state;
-    console.log("orderHistory", orderHistory);
-    const { value = [], next_link = '' } = orderHistory;
+    const {orderList = [], appTheme, user = [], navigation} = this.props;
+    const {orderHistory} = this.state;
+    console.log('orderHistory', orderHistory);
+    const {value = [], next_link = ''} = orderHistory;
     let theme = appTheme.theme;
 
     return (
@@ -112,14 +111,16 @@ class OrderHistory extends React.Component<IProps, IState> {
             this.onEndReachedCalledDuringMomentum = true;
           }
         }}
-        onMomentumScrollBegin={() => { this.onEndReachedCalledDuringMomentum = false; }}
+        onMomentumScrollBegin={() => {
+          this.onEndReachedCalledDuringMomentum = false;
+        }}
         onEndReachedThreshold={0.5}
-        renderItem={({ item }) => {
-          const { basic = [], items = [], uuid = '' } = item;
+        renderItem={({item}) => {
+          const {basic = [], items = [], uuid = ''} = item;
           let type = items && items[0] && items[0].type;
-          const { checkout_at = [], price = [], state = [] } = basic;
-          const { price_net = '' } = price;
-          const { date = '' } = checkout_at;
+          const {checkout_at = [], price = [], state = []} = basic;
+          const {price_net = ''} = price;
+          const {date = ''} = checkout_at;
           // const {uuid = ''} = items;
 
           // console.log('basic', JSON.stringify(item));
@@ -145,10 +146,17 @@ class OrderHistory extends React.Component<IProps, IState> {
                 <Text
                   style={[
                     styles.timeData,
-                    { color: theme.PRIMARY_TEXT_COLOR },
+                    {color: theme.PRIMARY_TEXT_COLOR},
                   ]}>{` ${Moment(date).format('dddd ,DD MMMM YYYY')}`}</Text>
 
-                <Text style={[styles.statusText, { color: state == "CANCELLED" ? colors.textRed : colors.green }]}>
+                <Text
+                  style={[
+                    styles.statusText,
+                    {
+                      color:
+                        state == 'CANCELLED' ? colors.textRed : colors.green,
+                    },
+                  ]}>
                   {state}
                 </Text>
               </View>
@@ -158,18 +166,18 @@ class OrderHistory extends React.Component<IProps, IState> {
               <FlatList
                 data={items}
                 horizontal={true}
-                renderItem={val => {
+                renderItem={(val) => {
                   let index = val.index;
                   let lastIndex = items.length - 1;
-                  const { type = '', service = [], deal = [] } = val.item;
-                  const { name = '' } = service;
-                  const { basic = [] } = deal;
+                  const {type = '', service = [], deal = []} = val.item;
+                  const {name = ''} = service;
+                  const {basic = []} = deal;
                   let dealName = basic && basic.name;
                   return (
                     <Text
                       style={[
                         styles.servicenameText,
-                        { color: theme.PRIMARY_TEXT_COLOR },
+                        {color: theme.PRIMARY_TEXT_COLOR},
                       ]}>
                       {/*  index !== lastIndex +  */}
                       {name
@@ -181,7 +189,7 @@ class OrderHistory extends React.Component<IProps, IState> {
                   );
                 }}
               />
-              <Text style={{ color: theme.PRIMARY_TEXT_COLOR }}>
+              <Text style={{color: theme.PRIMARY_TEXT_COLOR}}>
                 {`\u20B9` + price_net}
               </Text>
             </TouchableOpacity>
@@ -189,7 +197,7 @@ class OrderHistory extends React.Component<IProps, IState> {
         }}
         // ListFooterComponent={this.renderFooterUpcoming()}
         style={styles.flatListStyle}
-        contentInset={{ bottom: scale(150) }}
+        contentInset={{bottom: scale(150)}}
       />
       // </View>
     );
@@ -197,8 +205,8 @@ class OrderHistory extends React.Component<IProps, IState> {
   };
 
   render() {
-    const { appTheme, navigation } = this.props;
-    const { orderHistory = [], isLoading } = this.state;
+    const {appTheme, navigation} = this.props;
+    const {orderHistory = [], isLoading} = this.state;
     let theme = appTheme.theme;
     <StatusBar
       backgroundColor={theme.PRIMARY_BACKGROUND_COLOR_LIGHT}
@@ -208,7 +216,7 @@ class OrderHistory extends React.Component<IProps, IState> {
       <View
         style={[
           styles.container,
-          { backgroundColor: theme.PRIMARY_BACKGROUND_COLOR },
+          {backgroundColor: theme.PRIMARY_BACKGROUND_COLOR},
         ]}>
         {/* ScreenHeader */}
         <View
@@ -220,8 +228,8 @@ class OrderHistory extends React.Component<IProps, IState> {
           <ScreenHeader
             onPress={() => navigation.goBack()}
             screenTitle={'Orders'}
-          // align={'left'}
-          // backArrowColor={theme.PRIMARY_BACKGROUND_COLOR}
+            // align={'left'}
+            // backArrowColor={theme.PRIMARY_BACKGROUND_COLOR}
           />
         </View>
         {/* ScreenHeader End */}
@@ -252,7 +260,8 @@ const mapStatsToProps = ({
   orderList,
 });
 
-export default connect(
-  mapStatsToProps,
-  { getAllMyDeal, getMyDealNextLink, getOrderHistoryNextLink },
-)(OrderHistory);
+export default connect(mapStatsToProps, {
+  getAllMyDeal,
+  getMyDealNextLink,
+  getOrderHistoryNextLink,
+})(OrderHistory);

@@ -45,7 +45,7 @@ class otpScreen extends React.Component<IProps, IState> {
   _onKeyPresss = (d: any) => {
     let newInputData = this.state.inputData;
 
-    let firstUnFilledIndex = newInputData.findIndex(item => item.value == '');
+    let firstUnFilledIndex = newInputData.findIndex((item) => item.value == '');
 
     if (d != 10) {
       let indexData = newInputData[firstUnFilledIndex];
@@ -89,7 +89,7 @@ class otpScreen extends React.Component<IProps, IState> {
 
   checkOtp = () => {
     const {userData = {}, inputData, code} = this.state;
-    var getOtp = inputData.map(x => x.value);
+    var getOtp = inputData.map((x) => x.value);
     // var joinOtp = getOtp.join('');
     var joinOtp = code;
     console.log('joinOtp,', joinOtp);
@@ -105,7 +105,7 @@ class otpScreen extends React.Component<IProps, IState> {
 
   render() {
     let unFilledIndex = this.state.inputData.findIndex(
-      item => item.value === '',
+      (item) => item.value === '',
     );
     const {appTheme} = this.props;
     let theme = appTheme.theme;
@@ -145,12 +145,12 @@ class otpScreen extends React.Component<IProps, IState> {
             ]}
             // selectionColor={{backgroundColor: 'red'}}
             // code={this.state.code} //You can supply this prop or not. The component will be used as a controlled / uncontrolled component respectively.
-            onCodeChanged={code => {
+            onCodeChanged={(code) => {
               this.setState({code});
             }}
             autoFocusOnLoad
             codeInputHighlightStyle={{backgroundColor: colors.darkOrange}}
-            onCodeFilled={code => {
+            onCodeFilled={(code) => {
               this.setState(
                 {
                   code,
@@ -234,10 +234,7 @@ const mapStateToProps = ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    verifyOtp,
-    logOut,
-  },
-)(otpScreen);
+export default connect(mapStateToProps, {
+  verifyOtp,
+  logOut,
+})(otpScreen);

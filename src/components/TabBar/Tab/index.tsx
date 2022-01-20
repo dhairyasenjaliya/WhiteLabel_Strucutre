@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { Animated, Dimensions, TouchableOpacity, View } from 'react-native';
+import React, {PureComponent} from 'react';
+import {Animated, Dimensions, TouchableOpacity, View} from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
@@ -40,7 +40,7 @@ class Tab extends PureComponent {
   }
 
   animatedOpen = () => {
-    const { tabWidth, labelWidth, labelOpacity } = this.state;
+    const {tabWidth, labelWidth, labelOpacity} = this.state;
 
     Animated.parallel([
       Animated.timing(tabWidth, {
@@ -60,7 +60,7 @@ class Tab extends PureComponent {
   };
 
   animatedHide = () => {
-    const { tabWidth, labelWidth, labelOpacity } = this.state;
+    const {tabWidth, labelWidth, labelOpacity} = this.state;
 
     Animated.parallel([
       Animated.timing(tabWidth, {
@@ -79,44 +79,62 @@ class Tab extends PureComponent {
   };
 
   render() {
-    const { route, isActive, onTabPress, renderIcon, activeColors, inactiveColor, tabBarLabel } = this.props;
-    const { tabWidth, labelWidth, labelOpacity } = this.state;
+    const {
+      route,
+      isActive,
+      onTabPress,
+      renderIcon,
+      activeColors,
+      inactiveColor,
+      tabBarLabel,
+    } = this.props;
+    const {tabWidth, labelWidth, labelOpacity} = this.state;
     const color = isActive ? activeColors : inactiveColor;
 
-    console.log("this.state", this.state);
-    console.log("this.props", this.props);
+    console.log('this.state', this.state);
+    console.log('this.props', this.props);
 
     return (
       <TouchableOpacity
         onPress={() => {
-          onTabPress({ route });
+          onTabPress({route});
         }}
-        style={styles.container}
-      >
+        style={styles.container}>
         <Animated.View
-          style={[{ width: tabWidth, backgroundColor: isActive ? activeColors : 'transparent' }, styles.childView]}
+          style={[
+            {
+              width: tabWidth,
+              backgroundColor: isActive ? activeColors : 'transparent',
+            },
+            styles.childView,
+          ]}
           isActive={isActive}
-          activeBgColor={activeColors}
-        >
+          activeBgColor={activeColors}>
           {renderIcon({
             route,
             focused: isActive,
             tintColor: color,
           })}
-          {isActive && <Animated.Text
-            numberOfLines={1}
-            isActive={isActive}
-            color={color}
-            style={[{ opacity: labelOpacity, width: labelWidth, color: isActive ? "#fff" : "transparent" }, styles.text]}
-          >
-            {tabBarLabel}
-          </Animated.Text> || <View />}
+          {(isActive && (
+            <Animated.Text
+              numberOfLines={1}
+              isActive={isActive}
+              color={color}
+              style={[
+                {
+                  opacity: labelOpacity,
+                  width: labelWidth,
+                  color: isActive ? '#fff' : 'transparent',
+                },
+                styles.text,
+              ]}>
+              {tabBarLabel}
+            </Animated.Text>
+          )) || <View />}
         </Animated.View>
       </TouchableOpacity>
     );
   }
 }
-
-
 
 export default Tab;

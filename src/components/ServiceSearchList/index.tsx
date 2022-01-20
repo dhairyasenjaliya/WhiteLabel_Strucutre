@@ -98,7 +98,7 @@ class ServiceSearchList extends React.Component<IProps, IState> {
     const {category = '', items = ''} = data;
 
     let datassss = items
-      .filter(item => item.name.includes(searchName))
+      .filter((item) => item.name.includes(searchName))
       .map(
         ({name, duration_minutes, price, served_gender, uuid, variations}) => ({
           name,
@@ -260,13 +260,10 @@ const mapStateToProps = ({
   cartCheckout,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    addServiceInCart,
-    getAvailableStylist,
-    addServiceUuidMaster,
-    viewCart,
-    checkServiceType,
-  },
-)(ServiceSearchList);
+export default connect(mapStateToProps, {
+  addServiceInCart,
+  getAvailableStylist,
+  addServiceUuidMaster,
+  viewCart,
+  checkServiceType,
+})(ServiceSearchList);

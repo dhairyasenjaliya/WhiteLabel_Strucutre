@@ -154,7 +154,7 @@ class checkOutDetails extends React.Component<IProps, IState> {
         const {price_net = '', price_base = ''} = price;
         let logo = '';
         variations &&
-          variations.map(val => {
+          variations.map((val) => {
             if (val.logo) {
               logo = val.logo;
             }
@@ -263,7 +263,7 @@ class checkOutDetails extends React.Component<IProps, IState> {
     }
   };
 
-  toggleConfirmScreen = data => {
+  toggleConfirmScreen = (data) => {
     const {razorPayVerify, cartCheckout = []} = this.props;
     const {
       viewCart = [],
@@ -290,7 +290,7 @@ class checkOutDetails extends React.Component<IProps, IState> {
     // let meee = _.mapValues(services, function(o) {
     //   return o.items;
     // });
-    let value_convert = _.map(value, items => ({
+    let value_convert = _.map(value, (items) => ({
       items,
     }));
 
@@ -298,7 +298,7 @@ class checkOutDetails extends React.Component<IProps, IState> {
     // let meee = _.mapValues(services, function(o) {
     //   return o.items;
     // });
-    let category_convert = _.map(category, items => ({
+    let category_convert = _.map(category, (items) => ({
       categoryLocal: items,
     }));
 
@@ -414,7 +414,7 @@ class checkOutDetails extends React.Component<IProps, IState> {
           <CalendarStrip
             calendarAnimation={{type: 'sequence', duration: 30}}
             iconStyle={{height: 20, width: 20}}
-            onDateSelected={data => {
+            onDateSelected={(data) => {
               selected_Ids.date = Moment(data).format('YYYY-MM-DD');
               this.props.addSelectedDate(Moment(data).format('YYYY-MM-DD'));
               this.props.getAvailableTimeSlot(salonId, stylistId, selected_Ids);
@@ -563,7 +563,7 @@ class checkOutDetails extends React.Component<IProps, IState> {
         <FlatList
           data={availableStylist}
           keyExtractor={this.keyExtractor}
-          renderItem={availableStylist => {
+          renderItem={(availableStylist) => {
             const {item = ''} = availableStylist;
             console.log('item===>>>>', item);
             return (
@@ -765,12 +765,12 @@ class checkOutDetails extends React.Component<IProps, IState> {
     };
 
     RazorpayCheckout.open(checkout)
-      .then(data => {
+      .then((data) => {
         // handle success
         // alert(`Success: ${data.razorpay_payment_id}`);
         this.toggleConfirmScreen(data);
       })
-      .catch(error => {
+      .catch((error) => {
         // const {code = ''} = error;
         // if (code === 2) {
         //   alert('payment cancelled');
@@ -821,7 +821,7 @@ class checkOutDetails extends React.Component<IProps, IState> {
     let checkAvailablePayment = [];
     checkAvailablePayment =
       availablePaymentOption &&
-      availablePaymentOption.map(d => {
+      availablePaymentOption.map((d) => {
         let val = {label: d.name, name: d.name};
         return val;
       });
@@ -1105,7 +1105,7 @@ class checkOutDetails extends React.Component<IProps, IState> {
           </View>
           {/* Services List */}
           <RBSheet
-            ref={ref => {
+            ref={(ref) => {
               this.RBSheet = ref;
             }}
             onClose={() => {
@@ -1193,22 +1193,19 @@ const mapStatsToProps = ({
   stylistDetail,
 });
 
-export default connect(
-  mapStatsToProps,
-  {
-    viewCart,
-    checkOutApi,
-    removeServiceCart,
-    fetchStylistDetails,
-    addSelectedDate,
-    addSelectedTime,
-    addServiceAPI,
-    getAvailableTimeSlot,
-    fetchSalonDetails,
-    addStylist,
-    getAllOrder,
-    getAvailablePaymentOption,
-    razorPayInit,
-    razorPayVerify,
-  },
-)(checkOutDetails);
+export default connect(mapStatsToProps, {
+  viewCart,
+  checkOutApi,
+  removeServiceCart,
+  fetchStylistDetails,
+  addSelectedDate,
+  addSelectedTime,
+  addServiceAPI,
+  getAvailableTimeSlot,
+  fetchSalonDetails,
+  addStylist,
+  getAllOrder,
+  getAvailablePaymentOption,
+  razorPayInit,
+  razorPayVerify,
+})(checkOutDetails);

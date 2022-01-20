@@ -38,7 +38,4 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {},
-)(ComplimentSlider);
+export default connect(mapStateToProps, {})(ComplimentSlider);

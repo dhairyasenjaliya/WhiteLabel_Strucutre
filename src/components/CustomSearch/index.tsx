@@ -76,7 +76,4 @@ const mapStatsToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStatsToProps,
-  {},
-)(CustomSearch);
+export default connect(mapStatsToProps, {})(CustomSearch);

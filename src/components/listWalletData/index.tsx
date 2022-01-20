@@ -71,9 +71,6 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    // switchTheme,
-  },
-)(ListWalletHistory);
+export default connect(mapStateToProps, {
+  // switchTheme,
+})(ListWalletHistory);

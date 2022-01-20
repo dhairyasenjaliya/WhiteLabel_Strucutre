@@ -23,7 +23,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {colors} from '../../constants/styles';
 import ErrorHandle from '../../components/errorHandle';
 
-const FadeInView = props => {
+const FadeInView = (props) => {
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial value for opacity: 0
 
   React.useEffect(() => {
@@ -103,7 +103,7 @@ class dealScreen extends React.Component<IProps, IState> {
     // onPress={() => this.props.navigation.navigate('dealProductDetail')}
     return (
       <View>
-        {imageData.map(d => (
+        {imageData.map((d) => (
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('dealProductDetail')}>
             <Image source={d} style={styles.img} />
@@ -123,7 +123,7 @@ class dealScreen extends React.Component<IProps, IState> {
   };
 
   checkForCurrentIndex = (title: any) => {
-    const activeInex = DATA.findIndex(d => d.title === title);
+    const activeInex = DATA.findIndex((d) => d.title === title);
 
     if (title && activeInex >= 0) {
       if (this.state.activeInex !== activeInex) {

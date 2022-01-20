@@ -393,7 +393,7 @@ export default StyleSheet.create({
   buttonContain: {
     // paddingTop: scale(40),
     // top: scale(Platform.OS === 'ios' ? 710 : 680),
-  
+
     position: 'absolute',
     width: '100%',
     bottom: 0,

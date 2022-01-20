@@ -1,14 +1,13 @@
-import { API ,
-} from "../actionType/type";
+import {API} from '../actionType/type';
 
 export default function apiAction({
-  url = "",
-  method = "POST",
+  url = '',
+  method = 'POST',
   data = null,
   accessToken = null,
   onSuccess = {},
   onFailure = {},
-  label = "",
+  label = '',
   headersOverride = null,
   param = {},
 }) {

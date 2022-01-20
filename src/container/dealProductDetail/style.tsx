@@ -1,6 +1,12 @@
 import {StyleSheet, Dimensions, Platform} from 'react-native';
 // const { width } = Dimensions.get('window');
-import {scale, screenHeight, fontScale, verticalScale, screenWidth} from '../../utils/scale';
+import {
+  scale,
+  screenHeight,
+  fontScale,
+  verticalScale,
+  screenWidth,
+} from '../../utils/scale';
 import {colors, fonts} from '../../constants/styles';
 import {ifIphoneX} from 'react-native-iphone-x-helper';
 
@@ -76,7 +82,6 @@ export default StyleSheet.create({
     // width: '80%',
 
     marginTop: verticalScale(10),
-      
   },
   productDetail: {
     color: colors.White,

@@ -175,7 +175,7 @@ class Bookingdetails extends React.Component<IProps, IState> {
       <View style={styles.stylistContain}>
         <FlatList
           data={stylistDetail}
-          renderItem={stylistDetailss => {
+          renderItem={(stylistDetailss) => {
             const {item = ''} = stylistDetailss;
             const {appointment = ''} = item;
             const {personnel = ''} = appointment;
@@ -256,7 +256,7 @@ class Bookingdetails extends React.Component<IProps, IState> {
         <FlatList
           data={items}
           contentContainerStyle={styles.flatListContainer}
-          renderItem={data => {
+          renderItem={(data) => {
             const {item = []} = data;
             const {appointment = [], service = []} = item;
             const {personnel = []} = appointment;
@@ -295,10 +295,9 @@ class Bookingdetails extends React.Component<IProps, IState> {
                           styles.serviceTime,
                           {color: theme.PRIMARY_TEXT_COLOR},
                         ]}>
-                        {`${duration_minutes} mins at ${hour +
-                          minute +
-                          ` ` +
-                          AmOrPm} `}
+                        {`${duration_minutes} mins at ${
+                          hour + minute + ` ` + AmOrPm
+                        } `}
                       </Text>
                       <Text
                         style={[
@@ -520,7 +519,7 @@ class Bookingdetails extends React.Component<IProps, IState> {
           <FlatList
             data={timeLine}
             contentContainerStyle={styles.flatListContainer}
-            renderItem={data => {
+            renderItem={(data) => {
               // console.log('timeLine', timeLine.length - 1);
               let lastIndex = timeLine.length - 1;
               const {item = '', index = ''} = data;
@@ -628,7 +627,9 @@ const mapStatsToProps = ({appTheme = '', orderList = [], user = []}) => ({
   user,
 });
 
-export default connect(
-  mapStatsToProps,
-  {getOrderDetail, getAllOrder, orderCancle, getAllOrderHistory},
-)(Bookingdetails);
+export default connect(mapStatsToProps, {
+  getOrderDetail,
+  getAllOrder,
+  orderCancle,
+  getAllOrderHistory,
+})(Bookingdetails);

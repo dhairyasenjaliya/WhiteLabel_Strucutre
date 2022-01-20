@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { API } from '../store/responseHandle/type';
-import { apiError, apiStart, apiEnd } from '../store/responseHandle/api';
+import {API} from '../store/responseHandle/type';
+import {apiError, apiStart, apiEnd} from '../store/responseHandle/api';
 
-const apiMiddleware = ({ dispatch }: any) => (next: any) => (action: any) => {
+const apiMiddleware = ({dispatch}: any) => (next: any) => (action: any) => {
   next(action);
 
   if (action.type !== API) {
@@ -34,10 +34,10 @@ const apiMiddleware = ({ dispatch }: any) => (next: any) => (action: any) => {
       headers,
       [dataOrParams]: data,
     })
-    .then(({ data }) => {
-      dispatch(onSuccess({ res: data, param: param }));
+    .then(({data}) => {
+      dispatch(onSuccess({res: data, param: param}));
     })
-    .catch(error => {
+    .catch((error) => {
       // console.log('url',url);
       console.log('APIerror==>>', error.response);
       dispatch(apiError(error));

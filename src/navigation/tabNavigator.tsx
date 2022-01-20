@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {View} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import dealScreen from '../container/dealScreen';
 import productScreen from '../container/productScreen';
 import homeScreen from '../container/homeScreen';
@@ -10,11 +10,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import TabBar from '../components/TabBar';
 import myAccount from '../container/myAccount';
-import { colors } from '../constants/styles';
-import { Image, SafeAreaView } from 'react-native';
+import {colors} from '../constants/styles';
+import {Image, SafeAreaView} from 'react-native';
 import styles from './styles';
-import { connect } from 'react-redux';
-import { scale } from '../utils/scale';
+import {connect} from 'react-redux';
+import {scale} from '../utils/scale';
 
 type BottomTabParams = {
   homeScreen: undefined;
@@ -26,7 +26,7 @@ type BottomTabParams = {
 const BottomTabs = createBottomTabNavigator<BottomTabParams>();
 
 function BottomTabsScreen(props: any) {
-  const { appTheme } = props;
+  const {appTheme} = props;
   let theme = appTheme.theme;
   return (
     <BottomTabs.Navigator
@@ -45,7 +45,7 @@ function BottomTabsScreen(props: any) {
         component={homeScreen}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({color, size}) => (
             <Image
               source={require('../assets/navigator/home.png')}
               style={{
@@ -54,7 +54,6 @@ function BottomTabsScreen(props: any) {
                 width: 30,
                 alignContent: 'center',
                 resizeMode: 'contain',
-
               }}
             />
           ),
@@ -65,7 +64,7 @@ function BottomTabsScreen(props: any) {
         component={salonDetail}
         options={{
           tabBarLabel: 'Booking',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({color, size}) => (
             <Image
               source={require('../assets/navigator/shopping-bag.png')}
               style={{
@@ -73,7 +72,6 @@ function BottomTabsScreen(props: any) {
                 height: 30,
                 width: 30,
                 resizeMode: 'contain',
-
               }}
             />
           ),
@@ -84,7 +82,7 @@ function BottomTabsScreen(props: any) {
         component={productScreen}
         options={{
           tabBarLabel: 'Products',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({color, size}) => (
             <Image
               source={require('../assets/navigator/lotion.png')}
               style={{
@@ -93,7 +91,6 @@ function BottomTabsScreen(props: any) {
                 height: 30,
                 width: 30,
                 resizeMode: 'contain',
-
               }}
             />
           ),
@@ -104,7 +101,7 @@ function BottomTabsScreen(props: any) {
         component={dealScreen}
         options={{
           tabBarLabel: 'Deals',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({color, size}) => (
             <Image
               source={require('../assets/navigator/tab/discount.png')}
               style={{
@@ -112,7 +109,6 @@ function BottomTabsScreen(props: any) {
                 height: 30,
                 width: 30,
                 resizeMode: 'contain',
-
               }}
             />
           ),
@@ -123,7 +119,7 @@ function BottomTabsScreen(props: any) {
         component={myAccount}
         options={{
           tabBarLabel: 'My account',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({color, size}) => (
             <Image
               source={require('../assets/navigator/tab/account.png')}
               style={{
@@ -140,7 +136,7 @@ function BottomTabsScreen(props: any) {
   );
 }
 
-const mapStatsToProps = ({ appTheme = '' }) => ({
+const mapStatsToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 

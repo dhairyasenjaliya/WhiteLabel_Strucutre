@@ -26,7 +26,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {colors} from '../../constants/styles';
 import ErrorHandle from '../../components/errorHandle';
 
-const FadeInView = props => {
+const FadeInView = (props) => {
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial value for opacity: 0
 
   React.useEffect(() => {
@@ -115,7 +115,7 @@ class productScreen extends React.Component<IProps, IState> {
   //   );
   // }
 
-  renderCouponShield = data => {
+  renderCouponShield = (data) => {
     const {name = '', desc = '', know = '', color = '', image = ''} = data.item;
     const {appTheme = [], navigation} = this.props;
     let theme = appTheme.theme;
@@ -364,7 +364,7 @@ class productScreen extends React.Component<IProps, IState> {
                   image: images.shieldnew,
                 },
               ]}
-              renderItem={data => this.renderCouponShield(data)}
+              renderItem={(data) => this.renderCouponShield(data)}
               // contentContainerStyle={styles.headerContentContainerStyle}
             />
 
@@ -380,7 +380,7 @@ class productScreen extends React.Component<IProps, IState> {
               <FlatList
                 data={[1, 2, 3, 4]}
                 horizontal
-                renderItem={data => this.renderProduct(data)}
+                renderItem={(data) => this.renderProduct(data)}
                 showsHorizontalScrollIndicator={false}
               />
             </View>
@@ -393,7 +393,7 @@ class productScreen extends React.Component<IProps, IState> {
               <FlatList
                 data={[1, 2, 3, 4]}
                 horizontal
-                renderItem={data => this.renderProduct(data)}
+                renderItem={(data) => this.renderProduct(data)}
                 showsHorizontalScrollIndicator={false}
               />
             </View>
@@ -406,7 +406,7 @@ class productScreen extends React.Component<IProps, IState> {
               <FlatList
                 data={[1, 2, 3, 4]}
                 horizontal
-                renderItem={data => this.renderProduct(data)}
+                renderItem={(data) => this.renderProduct(data)}
                 showsHorizontalScrollIndicator={false}
               />
             </View>

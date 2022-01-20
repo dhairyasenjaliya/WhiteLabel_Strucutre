@@ -111,9 +111,7 @@ class serviceList extends React.Component<IProps, Istate> {
     // this.props.fetchSalonDetails(salonId);
     this.props.addSelectedDate(Moment(new Date()).format('YYYY-MM-DD'));
 
-    let weekDayToday = Moment(new Date())
-      .format('ddd')
-      .toUpperCase();
+    let weekDayToday = Moment(new Date()).format('ddd').toUpperCase();
     // console.log('weekDayToday', weekDayToday);
     this.setState({
       mapData: traffic_distributions && traffic_distributions[weekDayToday],
@@ -138,7 +136,7 @@ class serviceList extends React.Component<IProps, Istate> {
       });
   }
 
-  showTime = data => {
+  showTime = (data) => {
     // const {weekDate, generalTime} = this.state;
     const {theme} = this.props.appTheme;
     const {timeName = '', times = '', isSelected = ''} = data.item;
@@ -152,7 +150,7 @@ class serviceList extends React.Component<IProps, Istate> {
     );
   };
 
-  checkTake = i => {
+  checkTake = (i) => {
     const {serviceStatus} = this.state;
     let check = serviceStatus[i].status;
     serviceStatus[i].status = !check;
@@ -198,20 +196,20 @@ class serviceList extends React.Component<IProps, Istate> {
           isLoadingAvailableList ? (
             i === 0 && this.loaderData()
           ) : (
-              <ServiceList
-                hideService={() => {
-                  this.checkTake(i);
-                }}
-                searchName={searchedValue}
-                // searchName={` `}
-                hideStatus={checkState}
-                data={d}
-                ServiceList={true}
-                onPress={() => {
-                  this.CheckOut.open();
-                }}
-              />
-            )
+            <ServiceList
+              hideService={() => {
+                this.checkTake(i);
+              }}
+              searchName={searchedValue}
+              // searchName={` `}
+              hideStatus={checkState}
+              data={d}
+              ServiceList={true}
+              onPress={() => {
+                this.CheckOut.open();
+              }}
+            />
+          )
           // </ScrollView>
         );
       });
@@ -235,7 +233,7 @@ class serviceList extends React.Component<IProps, Istate> {
         <FlatList
           data={personnels}
           // keyExtractor={this.keyExtractor}
-          renderItem={personnels => (
+          renderItem={(personnels) => (
             <TopStylist
               data={personnels}
               salon_Uuid={uuid}
@@ -304,10 +302,10 @@ class serviceList extends React.Component<IProps, Istate> {
                         selectedTime === start
                           ? `rgba(238,117,15,0.2)`
                           : state === 'AVAILABLE'
-                            ? risk_level === 'LOW'
-                              ? colors.white
-                              : 'rgba(255,195,197,1)'
-                            : colors.grayBorder,
+                          ? risk_level === 'LOW'
+                            ? colors.white
+                            : 'rgba(255,195,197,1)'
+                          : colors.grayBorder,
                     },
                   ]}>
                   <Text
@@ -344,7 +342,7 @@ class serviceList extends React.Component<IProps, Istate> {
         <FlatList
           data={availableStylist}
           keyExtractor={this.keyExtractor}
-          renderItem={availableStylist => {
+          renderItem={(availableStylist) => {
             const {item = ''} = availableStylist;
             // console.log('item===>>>>', item);
             return (
@@ -567,7 +565,7 @@ class serviceList extends React.Component<IProps, Istate> {
           <FlatList
             data={variations}
             contentContainerStyle={styles.flatlistMargin}
-            renderItem={data => {
+            renderItem={(data) => {
               const {name = '', price = [], uuid = '', type = ''} = data.item;
               const {price_net = ''} = price;
               typeName = type;
@@ -784,7 +782,7 @@ class serviceList extends React.Component<IProps, Istate> {
             iconStyle={{height: 20, width: 20}}
             // selectedDate={}
             // setSelectedDate={selected_date}
-            onDateSelected={data => {
+            onDateSelected={(data) => {
               this.setState({selected_date: Moment(data).format('YYYY-MM-DD')});
               selected_Ids.date = Moment(data).format('YYYY-MM-DD');
               this.props.addSelectedDate(Moment(data).format('YYYY-MM-DD'));
@@ -841,25 +839,25 @@ class serviceList extends React.Component<IProps, Istate> {
               style={styles.indicator}
             />
           ) : (
-              <View style={{marginBottom: scale(5), marginTop: scale(5)}}>
-                {MORNING !== ''
-                  ? this.renderAvailbleTimes(MORNING, 'MORNING')
-                  : null}
-                {AFTERNOON !== ''
-                  ? this.renderAvailbleTimes(AFTERNOON, 'AFTERNOON')
-                  : null}
-                {EVENING !== ''
-                  ? this.renderAvailbleTimes(EVENING, 'EVENING')
-                  : null}
+            <View style={{marginBottom: scale(5), marginTop: scale(5)}}>
+              {MORNING !== ''
+                ? this.renderAvailbleTimes(MORNING, 'MORNING')
+                : null}
+              {AFTERNOON !== ''
+                ? this.renderAvailbleTimes(AFTERNOON, 'AFTERNOON')
+                : null}
+              {EVENING !== ''
+                ? this.renderAvailbleTimes(EVENING, 'EVENING')
+                : null}
 
-                {MORNING === '' && AFTERNOON === '' && EVENING === '' && (
-                  <Image
-                    source={require('../../assets/onBoarding/onBoading.png')}
-                    style={styles.mainImage}
-                  />
-                )}
-              </View>
-            )}
+              {MORNING === '' && AFTERNOON === '' && EVENING === '' && (
+                <Image
+                  source={require('../../assets/onBoarding/onBoading.png')}
+                  style={styles.mainImage}
+                />
+              )}
+            </View>
+          )}
         </View>
         <View
           style={[
@@ -935,9 +933,9 @@ class serviceList extends React.Component<IProps, Istate> {
       this.props.salonDetail.isLoadingData;
     let type =
       checkServiceType &&
-        checkServiceType.subService &&
-        checkServiceType.subService.variations &&
-        checkServiceType.subService.variations.length !== 0
+      checkServiceType.subService &&
+      checkServiceType.subService.variations &&
+      checkServiceType.subService.variations.length !== 0
         ? true
         : false;
 
@@ -960,7 +958,7 @@ class serviceList extends React.Component<IProps, Istate> {
           <View style={{marginBottom: scale(20)}}>
             <ScreenHeader
               onPress={() => this.props.navigation.goBack()}
-            // screenTitle={'Booking Summary'}
+              // screenTitle={'Booking Summary'}
             />
           </View>
 
@@ -998,7 +996,7 @@ class serviceList extends React.Component<IProps, Istate> {
             {/* Services End */}
             {/* CheckOut */}
             <RBSheet
-              ref={ref => {
+              ref={(ref) => {
                 this.CheckOut = ref;
               }}
               height={scale(500)}
@@ -1102,17 +1100,14 @@ const mapStatsToProps = ({
   user,
 });
 
-export default connect(
-  mapStatsToProps,
-  {
-    getAvailableTimeSlot,
-    addStylist,
-    addSelectedDate,
-    addSelectedTime,
-    addServiceAPI,
-    viewCart,
-    addServiceInCart,
-    addServiceUuidMaster,
-    getAvailableStylist,
-  },
-)(serviceList);
+export default connect(mapStatsToProps, {
+  getAvailableTimeSlot,
+  addStylist,
+  addSelectedDate,
+  addSelectedTime,
+  addServiceAPI,
+  viewCart,
+  addServiceInCart,
+  addServiceUuidMaster,
+  getAvailableStylist,
+})(serviceList);

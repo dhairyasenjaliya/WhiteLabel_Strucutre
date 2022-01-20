@@ -73,7 +73,7 @@ class MyDeal extends React.Component<IProps, IState> {
     return (
       <FlatList
         data={items}
-        renderItem={data => {
+        renderItem={(data) => {
           const {deal = []} = data.item;
           const {basic = [], salon = []} = deal;
           const {name = '', images = [], state = '', expires_at = []} = basic;
@@ -204,7 +204,7 @@ class MyDeal extends React.Component<IProps, IState> {
           <FlatList
             data={allDeals}
             extraData={this.state}
-            renderItem={data => this.renderCoupon(data)}
+            renderItem={(data) => this.renderCoupon(data)}
             keyExtractor={this.keyExtractor}
             contentContainerStyle={{marginTop: scale(5)}}
             initialNumToRender={10}
@@ -226,7 +226,6 @@ const mapStatsToProps = ({appTheme = '', user = [], dealList = []}) => ({
   dealList,
 });
 
-export default connect(
-  mapStatsToProps,
-  {getAllMyDeal, getMyDealNextLink},
-)(MyDeal);
+export default connect(mapStatsToProps, {getAllMyDeal, getMyDealNextLink})(
+  MyDeal,
+);

@@ -151,7 +151,7 @@ class checkOutDeals extends React.Component<IProps, IState> {
         const {price_base = ''} = price;
         let logo = '';
         variations &&
-          variations.map(val => {
+          variations.map((val) => {
             if (val.logo) {
               logo = val.logo;
             }
@@ -233,7 +233,7 @@ class checkOutDeals extends React.Component<IProps, IState> {
               <FlatList
                 data={items}
                 horizontal
-                renderItem={data => {
+                renderItem={(data) => {
                   let lastIndex = items.length - 1;
                   const {service = []} = data.item;
                   const {name = ''} = service;
@@ -350,7 +350,7 @@ class checkOutDeals extends React.Component<IProps, IState> {
         // alert(`Success: ${data.razorpay_payment_id}`);
         this.toggleConfirmScreen(data);
       })
-      .catch(error => {
+      .catch((error) => {
         const {code = ''} = error;
         if (code === 2) {
           alert('payment cancelled');
@@ -571,19 +571,16 @@ const mapStatsToProps = ({
   dealList,
 });
 
-export default connect(
-  mapStatsToProps,
-  {
-    checkOutApi,
-    viewCart,
-    checkOutDeal,
-    removeServiceCart,
-    fetchStylistDetails,
-    removeDealFromCart,
-    fetchSalonDetails,
-    getAllOrder,
-    razorPayInit,
-    getAvailablePaymentOption,
-    razorPayVerify,
-  },
-)(checkOutDeals);
+export default connect(mapStatsToProps, {
+  checkOutApi,
+  viewCart,
+  checkOutDeal,
+  removeServiceCart,
+  fetchStylistDetails,
+  removeDealFromCart,
+  fetchSalonDetails,
+  getAllOrder,
+  razorPayInit,
+  getAvailablePaymentOption,
+  razorPayVerify,
+})(checkOutDeals);

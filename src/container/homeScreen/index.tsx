@@ -265,7 +265,7 @@ class homeScreen extends React.Component<Props, State> {
 
     this.notificationListener = firebase
       .notifications()
-      .onNotification(notification => {
+      .onNotification((notification) => {
         if (Platform.OS === 'android') {
           const localNotification = new firebase.notifications.Notification()
             .setNotificationId(notification.notificationId)
@@ -278,7 +278,7 @@ class homeScreen extends React.Component<Props, State> {
           firebase
             .notifications()
             .displayNotification(localNotification)
-            .catch(err => console.error(err));
+            .catch((err) => console.error(err));
         }
       });
     this.checkPermission();
@@ -310,7 +310,7 @@ class homeScreen extends React.Component<Props, State> {
           this.props.getAllDealList(hits);
           console.log('DealList', hits.length);
         })
-        .catch(err => {
+        .catch((err) => {
           console.log('prod_deals err', err);
         });
     }
@@ -328,7 +328,7 @@ class homeScreen extends React.Component<Props, State> {
     // console.log('dd', detail.uuid);
     let Global = detail && detail.global_uuid;
     if (Global) {
-      OneSignal.setExternalUserId(Global, results => {
+      OneSignal.setExternalUserId(Global, (results) => {
         // console.log('Results of setting external user id', results);
       });
     }
@@ -505,7 +505,7 @@ class homeScreen extends React.Component<Props, State> {
                     obj={obj}
                     index={i}
                     isSelected={this.state.value === i}
-                    onPress={value => {
+                    onPress={(value) => {
                       this.setState({value});
                     }}
                     borderWidth={2}
@@ -655,7 +655,7 @@ class homeScreen extends React.Component<Props, State> {
 
   clearAllFilter = () => {
     const {filterData} = this.state;
-    Object.keys(filterData).forEach(key => {
+    Object.keys(filterData).forEach((key) => {
       if (filterData[key].isSelected) {
         let filterDataNew = filterData;
         filterDataNew[key].isSelected = false;
@@ -664,7 +664,7 @@ class homeScreen extends React.Component<Props, State> {
     });
   };
 
-  stylesImage = d => {
+  stylesImage = (d) => {
     const {productImage} = d.item;
     return (
       <Image
@@ -723,7 +723,7 @@ class homeScreen extends React.Component<Props, State> {
     }
   };
 
-  renderCouponShield = data => {
+  renderCouponShield = (data) => {
     const {name = '', desc = '', know = '', color = '', image = ''} = data.item;
     const {appTheme = [], navigation} = this.props;
     let theme = appTheme.theme;
@@ -791,7 +791,7 @@ class homeScreen extends React.Component<Props, State> {
     });
   }
 
-  renderStarPanel = data => {
+  renderStarPanel = (data) => {
     const {index = ''} = data;
     const {reviewSelected = ''} = this.state;
     const {appTheme} = this.props;
@@ -837,7 +837,7 @@ class homeScreen extends React.Component<Props, State> {
     );
   };
 
-  renderAmbienceButton = data => {
+  renderAmbienceButton = (data) => {
     const {salonDetail = [], appTheme, user = []} = this.props;
     // console.log('user', user);
     const {theme} = appTheme;
@@ -907,7 +907,7 @@ class homeScreen extends React.Component<Props, State> {
         <FlatList
           showsHorizontalScrollIndicator={false}
           horizontal
-          renderItem={index => this.renderStarPanel(index)}
+          renderItem={(index) => this.renderStarPanel(index)}
           keyExtractor={this.keyExtractor}
           data={[1, 2, 3, 4, 5]}
           contentContainerStyle={[
@@ -928,7 +928,7 @@ class homeScreen extends React.Component<Props, State> {
         <View style={styles.bottomLine} />
         <FlatList
           showsHorizontalScrollIndicator={false}
-          renderItem={index => this.renderAmbienceButton(index)}
+          renderItem={(index) => this.renderAmbienceButton(index)}
           // numRows={2}
           keyExtractor={this.keyExtractor}
           data={[1, 2, 3, 4, 5, 1, 2, 3]}
@@ -952,7 +952,7 @@ class homeScreen extends React.Component<Props, State> {
         <View style={styles.bottomLine} />
         <FlatList
           showsHorizontalScrollIndicator={false}
-          renderItem={index => this.renderAmbienceButton(index)}
+          renderItem={(index) => this.renderAmbienceButton(index)}
           // numRows={2}
           keyExtractor={this.keyExtractor}
           data={[1, 2, 3, 4, 5, 1, 2, 3]}
@@ -1013,7 +1013,7 @@ class homeScreen extends React.Component<Props, State> {
     const {theme} = appTheme;
     const {filterData, showFilter} = this.state;
     let isFilterEmpty = false;
-    Object.keys(filterData).forEach(key => {
+    Object.keys(filterData).forEach((key) => {
       if (filterData[key].isSelected === true) {
         isFilterEmpty = true;
       }
@@ -1164,7 +1164,7 @@ class homeScreen extends React.Component<Props, State> {
             <FlatList
               showsHorizontalScrollIndicator={false}
               horizontal
-              renderItem={index => this.renderHeaderItem(index)}
+              renderItem={(index) => this.renderHeaderItem(index)}
               keyExtractor={this.keyExtractor}
               data={[1, 2, 3, 4]}
               contentContainerStyle={[
@@ -1184,7 +1184,7 @@ class homeScreen extends React.Component<Props, State> {
                   image: images.seat,
                 },
               ]}
-              renderItem={data => this.renderCouponShield(data)}
+              renderItem={(data) => this.renderCouponShield(data)}
               // contentContainerStyle={styles.headerContentContainerStyle}
             />
 
@@ -1207,7 +1207,7 @@ class homeScreen extends React.Component<Props, State> {
               <Animated.FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                renderItem={categoriesData => (
+                renderItem={(categoriesData) => (
                   <ListCategory data={categoriesData} />
                 )}
                 keyExtractor={this.keyExtractor}
@@ -1237,7 +1237,9 @@ class homeScreen extends React.Component<Props, State> {
 
             <Animated.FlatList
               showsHorizontalScrollIndicator={false}
-              renderItem={walletData => <ListWalletHistory data={walletData} />}
+              renderItem={(walletData) => (
+                <ListWalletHistory data={walletData} />
+              )}
               keyExtractor={this.keyExtractor}
               data={walletData}
             />
@@ -1262,7 +1264,9 @@ class homeScreen extends React.Component<Props, State> {
             </View>
             <Animated.FlatList
               showsHorizontalScrollIndicator={false}
-              renderItem={bookingHistory => <BookAgain data={bookingHistory} />}
+              renderItem={(bookingHistory) => (
+                <BookAgain data={bookingHistory} />
+              )}
               keyExtractor={this.keyExtractor}
               data={bookingHistory}
               horizontal
@@ -1327,7 +1331,7 @@ class homeScreen extends React.Component<Props, State> {
             <Animated.FlatList
               showsHorizontalScrollIndicator={false}
               data={suggestedService}
-              renderItem={data => {
+              renderItem={(data) => {
                 const {index = ''} = data;
                 let checkSize = suggestedService.length - 1;
                 let lastData = checkSize === index ? false : true;
@@ -1394,7 +1398,7 @@ class homeScreen extends React.Component<Props, State> {
               <Animated.FlatList
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                renderItem={gallery => this.stylesImage(gallery)}
+                renderItem={(gallery) => this.stylesImage(gallery)}
                 keyExtractor={this.keyExtractor}
                 data={gallery}
               />
@@ -1425,7 +1429,7 @@ class homeScreen extends React.Component<Props, State> {
               </View> */}
             </View>
             <RBSheet
-              ref={ref => {
+              ref={(ref) => {
                 this.RBSheet = ref;
               }}
               height={scale(600)}
@@ -1485,17 +1489,14 @@ const mapStateToProps = ({
 
 // homeScreen = codePush(codePushOptions)(homeScreen);
 
-export default connect(
-  mapStateToProps,
-  {
-    fetchAlgoliaConfig,
-    fetchSalonDetails,
-    getAllOrder,
-    getAllDealList,
-    getDealTag,
-    getFavouriteDeal,
-    getAllOrderHistory,
-    // verifyOtp,
-    // logOut,
-  },
-)(homeScreen);
+export default connect(mapStateToProps, {
+  fetchAlgoliaConfig,
+  fetchSalonDetails,
+  getAllOrder,
+  getAllDealList,
+  getDealTag,
+  getFavouriteDeal,
+  getAllOrderHistory,
+  // verifyOtp,
+  // logOut,
+})(homeScreen);

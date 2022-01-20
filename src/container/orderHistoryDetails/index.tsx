@@ -260,7 +260,7 @@ class OrderHistoryDetails extends React.Component<IProps, IState> {
       <View>
         <FlatList
           data={items}
-          renderItem={data => {
+          renderItem={(data) => {
             const {item = []} = data;
             const {service = [], appointment = [], deal = []} = item;
 
@@ -942,7 +942,7 @@ class OrderHistoryDetails extends React.Component<IProps, IState> {
 
             {/* Services List */}
             <RBSheet
-              ref={ref => {
+              ref={(ref) => {
                 this.RBSheet = ref;
               }}
               onClose={() => {}}
@@ -973,7 +973,9 @@ const mapStatsToProps = ({appTheme = '', orderList = [], user = []}) => ({
   user,
 });
 
-export default connect(
-  mapStatsToProps,
-  {getAppointmentDetail, getAllOrder, orderCancle, getOrderHistoryDetail},
-)(OrderHistoryDetails);
+export default connect(mapStatsToProps, {
+  getAppointmentDetail,
+  getAllOrder,
+  orderCancle,
+  getOrderHistoryDetail,
+})(OrderHistoryDetails);

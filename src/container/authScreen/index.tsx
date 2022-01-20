@@ -134,7 +134,7 @@ class Login extends React.Component<IProps, IState> {
             autoFocus
             value={dialNumber}
             maxLength={10}
-            onChangeText={d => this._onKeyPresss(d)}
+            onChangeText={(d) => this._onKeyPresss(d)}
             style={[styles.inbox, {color: theme.PRIMARY_TEXT_COLOR}]}
           />
         </View>
@@ -188,10 +188,7 @@ const mapStateToProps = ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    sendOtp,
-    storeNumber,
-  },
-)(Login);
+export default connect(mapStateToProps, {
+  sendOtp,
+  storeNumber,
+})(Login);

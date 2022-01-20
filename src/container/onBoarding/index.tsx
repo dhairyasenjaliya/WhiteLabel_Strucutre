@@ -81,7 +81,7 @@ class Onboading extends React.Component<IProps, IState> {
     }
   };
 
-  onIndexChange = index => this.setState({index});
+  onIndexChange = (index) => this.setState({index});
 
   render() {
     const {appTheme, user} = this.props;
@@ -255,10 +255,7 @@ const mapStateToProps = ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    // verifyOtp,
-    // logOut,
-  },
-)(Onboading);
+export default connect(mapStateToProps, {
+  // verifyOtp,
+  // logOut,
+})(Onboading);

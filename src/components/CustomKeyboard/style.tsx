@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { colors, fonts, SCREENWIDTH, SCREENHEIGHT } from '../../constants/styles';
-import { scale } from '../../utils/scale';
+import {StyleSheet} from 'react-native';
+import {colors, fonts, SCREENWIDTH, SCREENHEIGHT} from '../../constants/styles';
+import {scale} from '../../utils/scale';
 
 export default StyleSheet.create({
   touchPad: {

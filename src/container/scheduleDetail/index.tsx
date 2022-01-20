@@ -193,14 +193,14 @@ class scheduleDetail extends React.Component<IProps, IState> {
         </Text>
         <FlatList
           data={items}
-          renderItem={data => {
+          renderItem={(data) => {
             const {items = []} = data.item;
             // console.log('eeh', JSON.stringify(data.item));
             return (
               <View>
                 <FlatList
                   data={items}
-                  renderItem={data => {
+                  renderItem={(data) => {
                     const {service = [], session = []} = data.item;
                     const {name = ''} = service;
                     const {total = '', left = ''} = session;
@@ -249,7 +249,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
     );
   };
 
-  cancleAppointment = uId => {
+  cancleAppointment = (uId) => {
     const {appointmentCancel} = this.props;
     appointmentCancel(uId);
     setTimeout(() => {
@@ -264,7 +264,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
     let theme = appTheme.theme;
     let lengthAppointment =
       items &&
-      items.map(d => {
+      items.map((d) => {
         let allTotal = 0;
         allTotal = allTotal + d.latest_appointments.length;
         return allTotal;
@@ -280,13 +280,13 @@ class scheduleDetail extends React.Component<IProps, IState> {
         )}
         <FlatList
           data={items}
-          renderItem={d => {
+          renderItem={(d) => {
             const {latest_appointments = [], variations = []} = d.item;
             // console.log('service', JSON.stringify(d));
             return (
               <FlatList
                 data={latest_appointments}
-                renderItem={dt => {
+                renderItem={(dt) => {
                   const {
                     details = [],
                     basic = [],
@@ -303,7 +303,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
                     return (
                       <FlatList
                         data={variations}
-                        renderItem={d => {
+                        renderItem={(d) => {
                           // const {uuid = ''} = d.item;
                           let localName = d && d.item && d.item.name;
                           let localUid = d && d.item && d.item.uuid;
@@ -442,7 +442,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
     const {date = []} = checkout_at;
     let lengthAppointment =
       items &&
-      items.map(d => {
+      items.map((d) => {
         let allTotal = 0;
         allTotal = allTotal + d.latest_appointments.length;
         return allTotal;
@@ -486,7 +486,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
     );
   };
 
-  datesBlacklistFunc = date => {
+  datesBlacklistFunc = (date) => {
     const {
       appTheme,
       navigation,
@@ -695,7 +695,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
     const {selected_date, startDate} = this.state;
 
     availableDateSlot &&
-      availableDateSlot.map(d => {
+      availableDateSlot.map((d) => {
         const {state = '', date = ''} = d;
         if (state === 'AVAILABLE') {
           if (date) {
@@ -827,14 +827,14 @@ class scheduleDetail extends React.Component<IProps, IState> {
           </View> */}
           <View style={[styles.upperLine2]}>
             <CalendarStrip
-              ref={ref => {
+              ref={(ref) => {
                 this.calender = ref;
               }}
               calendarAnimation={{type: 'sequence', duration: 30}}
               iconStyle={{height: 20, width: 20}}
               // selectedDate={Moment(selected_date)}
               setSelectedDate={selected_date}
-              onDateSelected={data => {
+              onDateSelected={(data) => {
                 this.setState({
                   selected_date: Moment(data).format('YYYY-MM-DD'),
                 });
@@ -972,7 +972,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
         <FlatList
           data={availableStylist}
           keyExtractor={this.keyExtractor}
-          renderItem={availableStylist => {
+          renderItem={(availableStylist) => {
             const {item = ''} = availableStylist;
             // console.log('item===>>>>', item);
             return (
@@ -1217,7 +1217,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
         <FlatList
           data={items}
           contentContainerStyle={styles.flatlistMargin}
-          renderItem={data => {
+          renderItem={(data) => {
             const {state = '', service = [], session = []} = data.item;
             const {
               uuid = '',
@@ -1392,7 +1392,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
           <FlatList
             data={items}
             contentContainerStyle={styles.flatlistMargin}
-            renderItem={data => {
+            renderItem={(data) => {
               const {service = {}, appointment = {}} = data.item;
               const {name = '', uuid = '', variations = []} = service;
               const {date = '', time = {}} = appointment;
@@ -1413,7 +1413,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
                 return (
                   <FlatList
                     data={variations}
-                    renderItem={data => {
+                    renderItem={(data) => {
                       const {name = ''} = data.item;
                       let localUuid = data && data.item && data.item.uuid;
                       let removeData = {
@@ -1640,7 +1640,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
         <FlatList
           data={service}
           contentContainerStyle={styles.flatlistMargin}
-          renderItem={data => {
+          renderItem={(data) => {
             const {name = '', price = [], uuid = '', type = ''} = data.item;
             const {price_net = ''} = price;
             // typeName = type;
@@ -1950,15 +1950,16 @@ class scheduleDetail extends React.Component<IProps, IState> {
                     style={styles.appointmentButton}>
                     <Text
                       style={[styles.appointButtontext, {color: colors.White}]}>
-                       Schedule appointment
+                      Schedule appointment
                     </Text>
                   </TouchableOpacity>
                 )}
               </View>
-              {appointment_bookable &&
-              <Text style={[styles.detailText, {color: colors.White}]}>
-                click here to view details
-              </Text>}
+              {appointment_bookable && (
+                <Text style={[styles.detailText, {color: colors.White}]}>
+                  click here to view details
+                </Text>
+              )}
             </LinearGradient>
 
             <View style={styles.mainView}>
@@ -2013,7 +2014,7 @@ class scheduleDetail extends React.Component<IProps, IState> {
               {/* Appointment Schedule End */}
               {/* CheckOut */}
               <RBSheet
-                ref={ref => {
+                ref={(ref) => {
                   this.CheckOut = ref;
                 }}
                 height={scale(500)}
@@ -2112,25 +2113,22 @@ const mapStatsToProps = ({
   cartList,
 });
 
-export default connect(
-  mapStatsToProps,
-  {
-    getMyDealDetail,
-    getAddableServie,
-    viewScheduleCart,
-    getAvailableTimeSlot,
-    getAvailableStylist,
-    addStylist,
-    addSelectedDate,
-    addSelectedTime,
-    addServiceAPI,
-    addServiceInCart,
-    addServiceUuidMaster,
-    addScheduleAPI,
-    removeScheduleAPI,
-    appointmentCheckout,
-    getAllOrder,
-    appointmentCancel,
-    getAvailableDateSlot,
-  },
-)(scheduleDetail);
+export default connect(mapStatsToProps, {
+  getMyDealDetail,
+  getAddableServie,
+  viewScheduleCart,
+  getAvailableTimeSlot,
+  getAvailableStylist,
+  addStylist,
+  addSelectedDate,
+  addSelectedTime,
+  addServiceAPI,
+  addServiceInCart,
+  addServiceUuidMaster,
+  addScheduleAPI,
+  removeScheduleAPI,
+  appointmentCheckout,
+  getAllOrder,
+  appointmentCancel,
+  getAvailableDateSlot,
+})(scheduleDetail);

@@ -123,9 +123,6 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    // switchTheme,
-  },
-)(StylistList);
+export default connect(mapStateToProps, {
+  // switchTheme,
+})(StylistList);

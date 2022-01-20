@@ -91,7 +91,4 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {},
-)(TopStylist);
+export default connect(mapStateToProps, {})(TopStylist);

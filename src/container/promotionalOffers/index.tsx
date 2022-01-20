@@ -207,7 +207,7 @@ class PromotionalOffers extends React.Component<IProps, IState> {
           keyExtractor={(d, i) => i.toString()}
         />
         <RBSheet
-          ref={ref => {
+          ref={(ref) => {
             this.RBSheet = ref;
           }}
           height={scale(400)}

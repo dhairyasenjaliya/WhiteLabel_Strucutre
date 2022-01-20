@@ -8,56 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* whitelabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* whitelabelTests.m */; };
-		02DBE73FA3DD489CA9EC5A25 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 443DDD8380614D5DB128D8C7 /* Ionicons.ttf */; };
-		07C7AC5923F2E169005ECE89 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07C7AC5823F2E15A005ECE89 /* MaterialCommunityIcons.ttf */; };
-		0CB5201DDABA4D05B38B5722 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A16358C577ED489286DF77DC /* EvilIcons.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		18125DD523F3EB0E00D91373 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18125DD423F3EB0E00D91373 /* FontAwesome.ttf */; };
-		1816ABFC23F27ABA006E1F54 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1816ABFB23F27ABA006E1F54 /* SimpleLineIcons.ttf */; };
-		1816AC0123F27B34006E1F54 /* HelveticaNeue-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1816ABFD23F27B34006E1F54 /* HelveticaNeue-Light.ttf */; };
-		1816AC0223F27B34006E1F54 /* HelveticaNeue-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1816ABFE23F27B34006E1F54 /* HelveticaNeue-Thin.ttf */; };
-		1816AC0323F27B34006E1F54 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1816ABFF23F27B34006E1F54 /* Roboto-Regular.ttf */; };
-		1816AC0423F27B34006E1F54 /* HelveticaNeue-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1816AC0023F27B34006E1F54 /* HelveticaNeue-Medium.ttf */; };
-		1816AC0723F280FE006E1F54 /* ProximaNovaA-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1816AC0523F280FE006E1F54 /* ProximaNovaA-Bold.ttf */; };
-		1816AC0823F280FE006E1F54 /* ProximaNovaA-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1816AC0623F280FE006E1F54 /* ProximaNovaA-Light.ttf */; };
-		1816AC0A23F2821F006E1F54 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1816AC0923F2821F006E1F54 /* Roboto-Medium.ttf */; };
-		1817130249C546CA9574777E /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 647B4E46CA844372B283F6B8 /* AntDesign.ttf */; };
-		181EEB6523F697E100C2C375 /* AvenirNext-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181EEB6223F697E000C2C375 /* AvenirNext-Medium.ttf */; };
-		181EEB6623F697E100C2C375 /* AvenirNext-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181EEB6323F697E000C2C375 /* AvenirNext-DemiBold.ttf */; };
-		181EEB6723F697E100C2C375 /* AvenirNext-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181EEB6423F697E000C2C375 /* AvenirNext-Regular.ttf */; };
-		181EEB6A23F6981900C2C375 /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181EEB6823F6981800C2C375 /* SFProText-Semibold.ttf */; };
-		181EEB6B23F6981900C2C375 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181EEB6923F6981800C2C375 /* Roboto-Bold.ttf */; };
-		181EEB6E23F6983700C2C375 /* abeatbyKaiRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181EEB6C23F6983700C2C375 /* abeatbyKaiRegular.ttf */; };
-		181EEB6F23F6983700C2C375 /* arial-black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 181EEB6D23F6983700C2C375 /* arial-black.ttf */; };
-		182C1F6924054332000AB0E6 /* HelveticaNeueCondensedBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182C1F6824054332000AB0E6 /* HelveticaNeueCondensedBold.ttf */; };
-		184B04A024126C050070D182 /* HelveticaNeueRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 184B049F24126C050070D182 /* HelveticaNeueRegular.ttf */; };
 		1876E2D22478FE04002F7630 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876E2D12478FE04002F7630 /* NotificationService.swift */; };
 		1876E2D62478FE04002F7630 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1876E2CF2478FE03002F7630 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		187D040924262090004AB8A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187D040824262090004AB8A1 /* GoogleService-Info.plist */; };
-		26C23A71263E48C886BA53F2 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 766274897BF94174A07F473D /* FontAwesome5_Brands.ttf */; };
-		29658548A770457AA5867314 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6ECE59A30C7949E2B12063B9 /* MaterialIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* whitelabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* whitelabelTests.m */; };
-		2FA57FCBBA4D471185B2471C /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5EEDBE3AC7F4638964538D1 /* Zocial.ttf */; };
 		3046F42526224DCB97388771 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D2AC72010794F05BB8AD522 /* libz.tbd */; };
-		3315FFDB303C4B01942E906E /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7A738A4EEDB405FAE143BD4 /* SimpleLineIcons.ttf */; };
-		35B84E30579B428691AD484A /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52C73EE69E94C66B94AE485 /* Feather.ttf */; };
-		363A5F65C31645249614A94B /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B2C7E0310024C4696DD63AA /* Fontisto.ttf */; };
-		38371DBD3E1A470DABCCC7C5 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6A0CADF1C7B4120B853AF48 /* MaterialCommunityIcons.ttf */; };
-		3DEFF36E9D5340BAB7A336C2 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799B614E8AAB4F699CE84D16 /* Octicons.ttf */; };
 		463BC2EBDE5FFD99FE07EC61 /* libPods-whitelabel-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF3CFF8234DAE033D7112FA6 /* libPods-whitelabel-tvOSTests.a */; };
-		5F73840CABA940329722C9BA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D2962283264119A4C173A1 /* FontAwesome.ttf */; };
-		689B997CFB0D4501B7CBD581 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A649A61C073498AB6E941A3 /* Foundation.ttf */; };
 		894C3CF4591FCD65CA5D12A8 /* libPods-whitelabel-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A5D366C132B195796CED5 /* libPods-whitelabel-tvOS.a */; };
-		A17F8294C6E7421FBE545ABA /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C7825218E4C089C8563FE /* Entypo.ttf */; };
+		C605BAB12799182100942691 /* Dp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C605BAB02799182100942691 /* Dp.swift */; };
 		D90CCEEDE3ACF06915709318 /* libPods-whitelabel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEA4C0AD6112A60F4534B67 /* libPods-whitelabel.a */; };
-		D9CB7B2A012247ED8129CD94 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB35A9A9BE484FC89F74D9F9 /* FontAwesome5_Solid.ttf */; };
-		E1FC57B3CD8F4307B7F8D819 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37CB08DB609D4ECFA640A95B /* FontAwesome5_Regular.ttf */; };
 		FA44E401812C7BA5E586C3D0 /* libPods-whitelabelTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4E9BCBB65C787F9183B7E82 /* libPods-whitelabelTests.a */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +125,8 @@
 		AB35A9A9BE484FC89F74D9F9 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		B5EEDBE3AC7F4638964538D1 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		C52C73EE69E94C66B94AE485 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		C605BAAF2799182100942691 /* whitelabel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "whitelabel-Bridging-Header.h"; sourceTree = "<group>"; };
+		C605BAB02799182100942691 /* Dp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dp.swift; sourceTree = "<group>"; };
 		C6CF377E9147E7D9D2B243BB /* Pods-whitelabel-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whitelabel-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-whitelabel-tvOSTests/Pods-whitelabel-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6CEF3F2B86357C7722ABD54 /* Pods-whitelabel-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whitelabel-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-whitelabel-tvOS/Pods-whitelabel-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D7A738A4EEDB405FAE143BD4 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
@@ -329,6 +297,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				C605BAB02799182100942691 /* Dp.swift */,
 				1816ABFA23F27A8E006E1F54 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* whitelabel */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -338,6 +307,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A90B4772120D06C365E4A78C /* Pods */,
 				0BEA96863089444F89826030 /* Resources */,
+				C605BAAF2799182100942691 /* whitelabel-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -491,6 +461,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 34FW74BUJ8;
+						LastSwiftMigration = 1320;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -552,44 +523,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181EEB6F23F6983700C2C375 /* arial-black.ttf in Resources */,
-				07C7AC5923F2E169005ECE89 /* MaterialCommunityIcons.ttf in Resources */,
-				1816AC0A23F2821F006E1F54 /* Roboto-Medium.ttf in Resources */,
-				1816AC0423F27B34006E1F54 /* HelveticaNeue-Medium.ttf in Resources */,
-				1816AC0323F27B34006E1F54 /* Roboto-Regular.ttf in Resources */,
-				181EEB6623F697E100C2C375 /* AvenirNext-DemiBold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				184B04A024126C050070D182 /* HelveticaNeueRegular.ttf in Resources */,
-				181EEB6B23F6981900C2C375 /* Roboto-Bold.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				1816AC0723F280FE006E1F54 /* ProximaNovaA-Bold.ttf in Resources */,
-				181EEB6E23F6983700C2C375 /* abeatbyKaiRegular.ttf in Resources */,
-				182C1F6924054332000AB0E6 /* HelveticaNeueCondensedBold.ttf in Resources */,
-				181EEB6723F697E100C2C375 /* AvenirNext-Regular.ttf in Resources */,
-				1816AC0823F280FE006E1F54 /* ProximaNovaA-Light.ttf in Resources */,
-				1816AC0123F27B34006E1F54 /* HelveticaNeue-Light.ttf in Resources */,
-				1816ABFC23F27ABA006E1F54 /* SimpleLineIcons.ttf in Resources */,
-				181EEB6523F697E100C2C375 /* AvenirNext-Medium.ttf in Resources */,
-				181EEB6A23F6981900C2C375 /* SFProText-Semibold.ttf in Resources */,
 				187D040924262090004AB8A1 /* GoogleService-Info.plist in Resources */,
-				1816AC0223F27B34006E1F54 /* HelveticaNeue-Thin.ttf in Resources */,
-				18125DD523F3EB0E00D91373 /* FontAwesome.ttf in Resources */,
-				1817130249C546CA9574777E /* AntDesign.ttf in Resources */,
-				A17F8294C6E7421FBE545ABA /* Entypo.ttf in Resources */,
-				0CB5201DDABA4D05B38B5722 /* EvilIcons.ttf in Resources */,
-				35B84E30579B428691AD484A /* Feather.ttf in Resources */,
-				5F73840CABA940329722C9BA /* FontAwesome.ttf in Resources */,
-				26C23A71263E48C886BA53F2 /* FontAwesome5_Brands.ttf in Resources */,
-				E1FC57B3CD8F4307B7F8D819 /* FontAwesome5_Regular.ttf in Resources */,
-				D9CB7B2A012247ED8129CD94 /* FontAwesome5_Solid.ttf in Resources */,
-				363A5F65C31645249614A94B /* Fontisto.ttf in Resources */,
-				689B997CFB0D4501B7CBD581 /* Foundation.ttf in Resources */,
-				02DBE73FA3DD489CA9EC5A25 /* Ionicons.ttf in Resources */,
-				38371DBD3E1A470DABCCC7C5 /* MaterialCommunityIcons.ttf in Resources */,
-				29658548A770457AA5867314 /* MaterialIcons.ttf in Resources */,
-				3DEFF36E9D5340BAB7A336C2 /* Octicons.ttf in Resources */,
-				3315FFDB303C4B01942E906E /* SimpleLineIcons.ttf in Resources */,
-				2FA57FCBBA4D471185B2471C /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,6 +844,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				C605BAB12799182100942691 /* Dp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +910,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01B758FD3044625D3F3B6C69 /* Pods-whitelabelTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -996,6 +934,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A4DA5A0E0AA5BB12FEC5271 /* Pods-whitelabelTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = whitelabelTests/Info.plist;
@@ -1018,6 +957,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = whitelabel/whitelabel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1035,6 +975,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.whitelabel.appp;
 				PRODUCT_NAME = whitelabel;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "whitelabel-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1046,6 +989,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = whitelabel/whitelabel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1062,6 +1006,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.whitelabel.appp;
 				PRODUCT_NAME = whitelabel;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "whitelabel-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

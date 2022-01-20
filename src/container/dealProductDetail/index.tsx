@@ -52,7 +52,7 @@ interface IState {
   currentIndex: Number;
 }
 
-const FadeInView = props => {
+const FadeInView = (props) => {
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial value for opacity: 0
 
   React.useEffect(() => {
@@ -148,7 +148,7 @@ class DealProductDetail extends Component<IProps, IState> {
               data={items}
               horizontal
               contentContainerStyle={styles.contentHorizontal}
-              renderItem={data => {
+              renderItem={(data) => {
                 const {service = []} = data.item;
                 const {name = ''} = service;
                 return (
@@ -160,12 +160,19 @@ class DealProductDetail extends Component<IProps, IState> {
             />
           </View>
           <View style={styles.detailText}>
-            <Text numberOfLines={2} style={styles.productName}>{name}</Text>
-            <Text numberOfLines={2} style={styles.productDetail}> {description}</Text>
+            <Text numberOfLines={2} style={styles.productName}>
+              {name}
+            </Text>
+            <Text numberOfLines={2} style={styles.productDetail}>
+              {' '}
+              {description}
+            </Text>
             {/* <Text style={styles.productDetail}>
               {`description descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription`}
             </Text> */}
-            <Text numberOfLines={2} style={styles.productPrice}>{'\u20B9 ' + price_net}</Text>
+            <Text numberOfLines={2} style={styles.productPrice}>
+              {'\u20B9 ' + price_net}
+            </Text>
           </View>
 
           <View style={styles.buttonGroup}>
@@ -195,13 +202,12 @@ class DealProductDetail extends Component<IProps, IState> {
               <Text style={styles.textDetails}>Details</Text>
             </TouchableOpacity>
           </View>
-        
         </View>
       </LinearGradient>
     );
   };
 
-  changeDealItem = index => {
+  changeDealItem = (index) => {
     // console.log('index', val);
     const {dealList = []} = this.props;
     const {dealDetail = [], listDealAll = []} = dealList;
@@ -231,7 +237,7 @@ class DealProductDetail extends Component<IProps, IState> {
         this.props.getAllDealList(hits);
         // console.log('DealList', hits);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log('prod_deals err', err);
       });
   };
@@ -394,14 +400,14 @@ class DealProductDetail extends Component<IProps, IState> {
 
           <View>
             <Carousel
-              ref={carousel => {
+              ref={(carousel) => {
                 this._carousel = carousel;
               }}
               onSnapToItem={(index, data) => {
                 this.changeDealItem(index);
               }}
               data={listDealAll}
-              renderItem={data => this._renderItem(data)}
+              renderItem={(data) => this._renderItem(data)}
               sliderHeight={scale(1000)}
               itemHeight={scale(1200)}
               vertical={true}
@@ -414,7 +420,7 @@ class DealProductDetail extends Component<IProps, IState> {
         </View>
         <View>
           <RBSheet
-            ref={ref => {
+            ref={(ref) => {
               this.RBSheet = ref;
             }}
             height={scale(500)}
@@ -444,7 +450,7 @@ class DealProductDetail extends Component<IProps, IState> {
                     <FlatList
                       contentContainerStyle={styles.contentContainer}
                       data={tnc}
-                      renderItem={data => {
+                      renderItem={(data) => {
                         let name = data.item;
                         let index = data.index + 1;
                         return (
@@ -482,7 +488,7 @@ class DealProductDetail extends Component<IProps, IState> {
                     <FlatList
                       contentContainerStyle={styles.contentContainer}
                       data={redeem_steps}
-                      renderItem={data => {
+                      renderItem={(data) => {
                         let name = data.item;
                         let index = data.index + 1;
                         return (
@@ -547,13 +553,10 @@ const mapStatsToProps = ({
   algoliaDetail,
 });
 
-export default connect(
-  mapStatsToProps,
-  {
-    getDealDetail,
-    dealFavourite,
-    getAllDealList,
-    addDealInCart,
-    getFavouriteDeal,
-  },
-)(DealProductDetail);
+export default connect(mapStatsToProps, {
+  getDealDetail,
+  dealFavourite,
+  getAllDealList,
+  addDealInCart,
+  getFavouriteDeal,
+})(DealProductDetail);

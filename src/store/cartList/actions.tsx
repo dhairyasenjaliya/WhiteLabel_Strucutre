@@ -141,10 +141,9 @@ export function addServiceAPI(consumerId: String, data: any) {
 }
 
 function addServiceAPISuccess(data: any, consumerId: any) {
-
   // RootNavigation.navigate('checkOutDetails');
 
-  return dispatch => {
+  return (dispatch) => {
     dispatch(viewCart(consumerId));
     dispatch({
       type: ADD_SERVICE_API,

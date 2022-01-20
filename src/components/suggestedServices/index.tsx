@@ -102,9 +102,6 @@ const mapStateToProps = ({appTheme = ''}) => ({
   appTheme,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    // switchTheme,
-  },
-)(SuggestServices);
+export default connect(mapStateToProps, {
+  // switchTheme,
+})(SuggestServices);

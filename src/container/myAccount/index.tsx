@@ -465,7 +465,7 @@ class myAccount extends React.Component<IProps, IState> {
         <TextInput
           style={[styles.customInput, {color: theme.PRIMARY_TEXT_COLOR}]}
           value={detail.name_first}
-          onChangeText={val => {
+          onChangeText={(val) => {
             this.setState({
               detail: {
                 ...detail,
@@ -486,7 +486,7 @@ class myAccount extends React.Component<IProps, IState> {
         <TextInput
           style={[styles.customInput, {color: theme.PRIMARY_TEXT_COLOR}]}
           value={detail.name_last}
-          onChangeText={val => {
+          onChangeText={(val) => {
             this.setState({
               detail: {
                 ...detail,
@@ -547,7 +547,7 @@ class myAccount extends React.Component<IProps, IState> {
               {width: SCREENWIDTH - 90, color: theme.PRIMARY_TEXT_COLOR},
             ]}
             value={detail.email}
-            onChangeText={val => {
+            onChangeText={(val) => {
               this.setState({
                 detail: {
                   ...detail,
@@ -593,7 +593,7 @@ class myAccount extends React.Component<IProps, IState> {
     const {user = []} = this.props;
     const {detail = []} = user;
     const {uuid = ''} = detail;
-    OneSignal.removeExternalUserId(results => {
+    OneSignal.removeExternalUserId((results) => {
       // The results will contain push and email success statuses
       // console.log('Results of removing external user id');
       // console.log(results);
@@ -697,7 +697,7 @@ class myAccount extends React.Component<IProps, IState> {
             <View style={styles.customSwitch}>
               <Switch
                 value={theme.type === 'lightTheme' ? true : false}
-                onValueChange={value => this.props.switchTheme(value)}
+                onValueChange={(value) => this.props.switchTheme(value)}
                 disabled={false}
                 circleSize={25}
                 barHeight={30}
@@ -764,7 +764,7 @@ class myAccount extends React.Component<IProps, IState> {
         </View> */}
 
         <RBSheet
-          ref={ref => {
+          ref={(ref) => {
             this.RBSheet = ref;
           }}
           height={scale(400)}
@@ -785,7 +785,7 @@ class myAccount extends React.Component<IProps, IState> {
           <FlatList
             data={optionMenu}
             contentContainerStyle={{marginLeft: scale(17)}}
-            renderItem={i => this.renderOptions(i)}
+            renderItem={(i) => this.renderOptions(i)}
           />
           <View style={styles.recentContain}>
             <Text
@@ -813,13 +813,10 @@ const mapStateToProps = ({
   orderList,
 });
 
-export default connect(
-  mapStateToProps,
-  {
-    switchTheme,
-    userSignOut,
-    editUser,
-    getAllOrder,
-    getOrderByNextLink,
-  },
-)(myAccount);
+export default connect(mapStateToProps, {
+  switchTheme,
+  userSignOut,
+  editUser,
+  getAllOrder,
+  getOrderByNextLink,
+})(myAccount);

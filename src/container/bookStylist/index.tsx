@@ -359,7 +359,4 @@ const mapStatsToProps = ({
   salonDetail,
 });
 
-export default connect(
-  mapStatsToProps,
-  {},
-)(serviceList);
+export default connect(mapStatsToProps, {})(serviceList);
