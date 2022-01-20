@@ -1,47 +1,31 @@
 /* eslint-disable no-shadow */
+import Moment from 'moment';
 import React from 'react';
 import {
-  View,
-  Text,
-  FlatList,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  Platform,
-  ActivityIndicator,
+    ActivityIndicator, FlatList, Image, ScrollView, Text, TouchableOpacity, View
 } from 'react-native';
-
-import Search from '../../components/CustomSearch';
-import styles from './style';
-import {connect} from 'react-redux';
-import RBSheet from 'react-native-raw-bottom-sheet';
-import Moment from 'moment';
 import CalendarStrip from 'react-native-calendar-strip';
-import TopStylist from '../../components/topStylist';
-
-import {scale} from '../../utils/scale';
-import {colors, fonts} from '../../constants/styles';
-import * as RootNavigation from '../../navigation/rootNavigation';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import RBSheet from 'react-native-raw-bottom-sheet';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { connect } from 'react-redux';
+import CustomButton from '../../components/Button';
+import Search from '../../components/CustomSearch';
 import ScreenHeader from '../../components/ScreenHeader';
 import ServiceList from '../../components/ServiceList';
-import CustomButton from '../../components/Button';
-// import ServiceProductList from '../../components/serviceProductList';
-// import ServiceSearchList from '../../components/ServiceSearchList';
-
-import {fetchSalonDetails} from '../../store/salonDetail/actions';
+import TopStylist from '../../components/topStylist';
+import { colors } from '../../constants/styles';
+import { viewCart } from '../../store/cartCheckout/actions';
 import {
-  getAvailableTimeSlot,
-  addStylist,
-  addSelectedDate,
-  addSelectedTime,
-  addServiceAPI,
-  addServiceInCart,
-  addServiceUuidMaster,
-  getAvailableStylist,
+    addSelectedDate,
+    addSelectedTime,
+    addServiceAPI,
+    addServiceInCart,
+    addServiceUuidMaster, addStylist, getAvailableStylist, getAvailableTimeSlot
 } from '../../store/cartList/actions';
-import {viewCart} from '../../store/cartCheckout/actions';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { scale } from '../../utils/scale';
+import styles from './style';
+
+
 
 interface IProps {
   navigation: any;

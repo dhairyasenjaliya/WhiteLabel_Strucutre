@@ -1,12 +1,9 @@
 // import * as RootNavigation from '../../navigation/rootNavigation';
-import React, {PureComponent} from 'react';
-import {View} from 'react-native';
-import {Svg, G, Line, Rect, Text} from 'react-native-svg';
 import * as d3 from 'd3';
-import {connect} from 'react-redux';
-import styles from './style';
-import {scale} from '../../utils/scale';
-import {colors} from '../../constants/styles';
+import React from 'react';
+import { G, Rect, Svg, Text } from 'react-native-svg';
+import { connect } from 'react-redux';
+import { colors } from '../../constants/styles';
 
 const GRAPH_MARGIN = 20;
 const GRAPH_BAR_WIDTH = 20;

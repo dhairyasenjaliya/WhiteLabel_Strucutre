@@ -1,6 +1,6 @@
-import {StyleSheet, Platform} from 'react-native';
-import {scale, fontScale} from '../../utils/scale';
-import {colors, fonts, SCREENHEIGHT} from '../../constants/styles';
+import { Platform, StyleSheet } from 'react-native';
+import { colors, fonts } from '../../constants/styles';
+import { fontScale, scale } from '../../utils/scale';
 
 export default StyleSheet.create({
   container: {

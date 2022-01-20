@@ -1,65 +1,54 @@
+// import DataCheck from '../../components/checkData';
+import axios from 'axios';
 import React from 'react';
 import {
-  View,
-  Text,
-  FlatList,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  Animated,
-  StatusBar,
-  Platform,
-  BackHandler,
+    Animated, FlatList, Image, Platform, ScrollView, StatusBar, Text, TouchableOpacity, View
 } from 'react-native';
-import RNPickerSelect from 'react-native-picker-select';
 import codePush from 'react-native-code-push';
-import SwipeablePanel from '../../components/SwipeablePanel';
 import FastImage from 'react-native-fast-image';
-
 import firebase from 'react-native-firebase';
 import OneSignal from 'react-native-onesignal';
-import MadeByStyle from '../../assets/svg/live.svg';
+import RNPickerSelect from 'react-native-picker-select';
 // import Mixpanel from 'react-native-mixpanel';
 // import SplashScreen from 'react-native-splash-screen';
 import RBSheet from 'react-native-raw-bottom-sheet';
-import styles from './style';
+import RadioForm, {
+    RadioButton,
+    RadioButtonInput,
+    RadioButtonLabel
+} from 'react-native-simple-radio-button';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { connect } from 'react-redux';
+import images from '../../assets/images';
+import MadeByStyle from '../../assets/svg/live.svg';
+import BookAgain from '../../components/bookAgainComponent';
+import CustomButton from '../../components/Button';
 import HomeScreenHeader from '../../components/header';
+import FeaturedComponent from '../../components/homeScreens/featuredComponent';
 import ListCategory from '../../components/listCategory';
 import ListWalletHistory from '../../components/listWalletData';
-import SuggestServices from '../../components/suggestedServices';
-import images from '../../assets/images';
-import TopStylist from '../../components/topStylist';
-import TopSalon from '../../components/topSalonAround';
-import NearbySalon from '../../components/nearbySalon';
-import BookAgain from '../../components/bookAgainComponent';
-import {connect} from 'react-redux';
-import {scale, screenHeight} from '../../utils/scale';
-import CustomButton from '../../components/Button';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import RadioForm, {
-  RadioButton,
-  RadioButtonInput,
-  RadioButtonLabel,
-} from 'react-native-simple-radio-button';
-import {colors} from '../../constants/styles';
 import Loader from '../../components/Loader';
-import FeaturedComponent from '../../components/homeScreens/featuredComponent';
-// import DataCheck from '../../components/checkData';
-import axios from 'axios';
-import {fetchAlgoliaConfig} from '../../store/algoliaConfig/actions';
-import {fetchSalonDetails} from '../../store/salonDetail/actions';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import analyticsManager from '../../utils/analytics-manager';
-import {getAllOrder} from '../../store/orderList/actions';
+import NearbySalon from '../../components/nearbySalon';
+import SuggestServices from '../../components/suggestedServices';
+import SwipeablePanel from '../../components/SwipeablePanel';
+import TopSalon from '../../components/topSalonAround';
+import TopStylist from '../../components/topStylist';
+import { colors } from '../../constants/styles';
+import { fetchAlgoliaConfig } from '../../store/algoliaConfig/actions';
 import {
-  getAllDealList,
-  getDealTag,
-  getFavouriteDeal,
+    getAllDealList,
+    getDealTag,
+    getFavouriteDeal
 } from '../../store/dealList/actions';
+import { getAllOrder, getAllOrderHistory } from '../../store/orderList/actions';
+import { fetchSalonDetails } from '../../store/salonDetail/actions';
+import analyticsManager from '../../utils/analytics-manager';
+import { OneSignalId } from '../../utils/api-configuration';
+import { scale } from '../../utils/scale';
+import styles from './style';
 
-import {getAllOrderHistory} from '../../store/orderList/actions';
 
-import {OneSignalId} from '../../utils/api-configuration';
+
 
 const codePushOptions = {checkFrequency: codePush.CheckFrequency.ON_APP_RESUME};
 

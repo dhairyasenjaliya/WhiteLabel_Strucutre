@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
-import styles from './style';
-import {default as Localimages} from '../../assets/images';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { default as Localimages } from '../../assets/images';
 import * as RootNavigation from '../../navigation/rootNavigation';
+import styles from './style';
 
 const TopStylist = (props: any) => {
   const {

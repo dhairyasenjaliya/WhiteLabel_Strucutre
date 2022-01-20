@@ -1,34 +1,25 @@
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  TouchableOpacity,
-  Text,
-  Image,
-  Linking,
-  Platform,
-  FlatList,
-  Alert,
+    FlatList, Image,
+    Linking,
+    Platform, SafeAreaView,
+    ScrollView, Text, TouchableOpacity, View
 } from 'react-native';
-import Moment from 'moment';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { connect } from 'react-redux';
+import images from '../../assets/images';
+import ScreenHeader from '../../components/ScreenHeader';
+import { colors } from '../../constants/styles';
+import { getDealOrderDetail } from '../../store/dealList/actions';
+import {
+    getAllOrder, getAppointmentDetail, orderCancle
+} from '../../store/orderList/actions';
+import { scale } from '../../utils/scale';
 // import { colors, fonts } from '../../constants/styles';
 // import { scale } from '../../utils/scale';
 import styles from './style';
-import ScreenHeader from '../../components/ScreenHeader';
-import {connect} from 'react-redux';
-import {scale} from '../../utils/scale';
-import {
-  getAppointmentDetail,
-  getAllOrder,
-  orderCancle,
-} from '../../store/orderList/actions';
 
-import {getDealOrderDetail} from '../../store/dealList/actions';
 
-import images from '../../assets/images';
-import {colors} from '../../constants/styles';
 
 interface IProps {
   appTheme: Object;

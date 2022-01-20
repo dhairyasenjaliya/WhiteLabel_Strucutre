@@ -1,20 +1,15 @@
+import OTPInputView from '@twotalltotems/react-native-otp-input';
 import React from 'react';
 import {
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-  Platform,
-  TextInput,
+  SafeAreaView, Text,
+  TouchableOpacity, View
 } from 'react-native';
-import styles from './style';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import {scale} from '../../../utils/scale';
-import {colors} from '../../../constants/styles';
-import CustomKeyboard from '../../../components/CustomKeyboard';
-import {verifyOtp, logOut} from '../../../store/user/actions';
-import {connect} from 'react-redux';
-import OTPInputView from '@twotalltotems/react-native-otp-input';
+import { connect } from 'react-redux';
+import { colors } from '../../../constants/styles';
+import { logOut, verifyOtp } from '../../../store/user/actions';
+import { scale } from '../../../utils/scale';
+import styles from './style';
 
 export interface IProps {
   user: any;

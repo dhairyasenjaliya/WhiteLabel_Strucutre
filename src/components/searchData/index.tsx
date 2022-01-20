@@ -1,11 +1,11 @@
 import React from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
-
-import styles from './style';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { connect } from 'react-redux';
 import images from '../../assets/images';
-import NearbySalon from '../nearbySalon';
-import {connect} from 'react-redux';
 import * as RootNavigation from '../../navigation/rootNavigation';
+import NearbySalon from '../nearbySalon';
+import styles from './style';
+
 
 const SearchData = (props: any) => {
   const {appTheme, data = ''} = props;

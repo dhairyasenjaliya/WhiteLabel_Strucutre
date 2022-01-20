@@ -1,27 +1,20 @@
 /* eslint-disable no-shadow */
 import React from 'react';
 import {
-  View,
-  Text,
-  FlatList,
-  ScrollView,
-  Image,
-  Animated,
-  TouchableOpacity,
+    Animated, FlatList, Text, TouchableOpacity, View
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { TabBar, TabView } from 'react-native-tab-view';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { connect } from 'react-redux';
 import Search from '../../components/CustomSearch';
-import styles from './style';
-import {connect} from 'react-redux';
-import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
-
-import {scale} from '../../utils/scale';
-import {colors, fonts} from '../../constants/styles';
-import * as RootNavigation from '../../navigation/rootNavigation';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import ScreenHeader from '../../components/ScreenHeader';
 import StylistList from '../../components/stylistList';
+import { colors, fonts } from '../../constants/styles';
+import { scale } from '../../utils/scale';
+import styles from './style';
+
+
 
 interface IProps {
   navigation: any;

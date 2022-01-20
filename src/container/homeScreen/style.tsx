@@ -1,7 +1,7 @@
-import {StyleSheet, Dimensions, Platform} from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+import { colors, fonts } from '../../constants/styles';
+import { scale } from '../../utils/scale';
 
-import {scale} from '../../utils/scale';
-import {colors, fonts} from '../../constants/styles';
 
 const {width} = Dimensions.get('window');
 

@@ -1,8 +1,8 @@
-import {StyleSheet, Dimensions, Platform} from 'react-native';
-const {width} = Dimensions.get('window');
-import {colors, fonts, SCREENWIDTH} from '../../constants/styles';
+import { Dimensions, Platform, StyleSheet } from 'react-native';
+import { colors, fonts } from '../../constants/styles';
 // import {ifIphoneX} from 'react-native-iphone-x-helper';
-import {scale, screenHeight} from '../../utils/scale';
+import { scale, screenHeight } from '../../utils/scale';
+const {width} = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {

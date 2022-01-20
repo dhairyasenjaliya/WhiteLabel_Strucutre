@@ -1,29 +1,19 @@
 import React from 'react';
 import {
-  Text,
-  View,
-  Image,
-  ScrollView,
-  FlatList,
-  TouchableOpacity,
+    Text, TouchableOpacity, View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-import styles from './style';
-import images from '../../assets/images';
-import ServiceProductList from '../serviceProductList';
-import {connect} from 'react-redux';
-import * as RootNavigation from '../../navigation/rootNavigation';
-import CartAdd from '../cartAdd';
-import {scale} from '../../utils/scale';
+import { connect } from 'react-redux';
+import { colors } from '../../constants/styles';
+import { viewCart } from '../../store/cartCheckout/actions';
 import {
-  addServiceInCart,
-  getAvailableStylist,
-  addServiceUuidMaster,
-  checkServiceType,
+    addServiceInCart, addServiceUuidMaster,
+    checkServiceType, getAvailableStylist
 } from '../../store/cartList/actions';
-import {viewCart} from '../../store/cartCheckout/actions';
-import {colors} from '../../constants/styles';
+import { scale } from '../../utils/scale';
+import CartAdd from '../cartAdd';
+import styles from './style';
+
 
 interface IProps {
   addServiceInCart: Function;

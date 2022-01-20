@@ -1,9 +1,8 @@
 import React from 'react';
-import {TouchableOpacity, Text, View} from 'react-native';
-import styles from './style';
+import { Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {scale} from '../../utils/scale';
-import {colors} from '../../constants/styles';
+import { colors } from '../../constants/styles';
+import { scale } from '../../utils/scale';
 
 const CartEdit = (props: any) => {
   const {

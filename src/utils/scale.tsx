@@ -1,4 +1,4 @@
-import {Dimensions, PixelRatio} from 'react-native';
+import { Dimensions, PixelRatio } from 'react-native';
 const {width, height} = Dimensions.get('window');
 
 //Guideline sizes are based on standard ~5" screen mobile device
@@ -14,10 +14,11 @@ const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
 
 export {
-  scale,
-  verticalScale,
-  moderateScale,
-  fontScale,
-  screenWidth,
-  screenHeight,
+    scale,
+    verticalScale,
+    moderateScale,
+    fontScale,
+    screenWidth,
+    screenHeight,
 };
+

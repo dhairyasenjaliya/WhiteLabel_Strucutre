@@ -1,5 +1,5 @@
 import Mixpanel from 'react-native-mixpanel';
-import {MIXPANEL_API_KEY} from './api-configuration';
+import { MIXPANEL_API_KEY } from './api-configuration';
 
 class AnalyticsManager {
   constructor() {

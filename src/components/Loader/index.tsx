@@ -1,12 +1,11 @@
 import React from 'react';
-import {View, Text, ActivityIndicator, StatusBar} from 'react-native';
-import Shimmer from 'react-native-shimmer';
-import styles from './style';
+import { ActivityIndicator, StatusBar, Text, View } from 'react-native';
+import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
 // import { scale } from '../../utils/scale';
 // import { colors } from '../../constants/styles';
-import {connect} from 'react-redux';
-import {colors} from '../../constants/styles';
-import ShimmerPlaceHolder from 'react-native-shimmer-placeholder';
+import { connect } from 'react-redux';
+import { colors } from '../../constants/styles';
+import styles from './style';
 
 interface IProps {
   appTheme: Object;

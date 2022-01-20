@@ -1,20 +1,16 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
-import {View} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { Image } from 'react-native';
+import { connect } from 'react-redux';
+import { colors } from '../constants/styles';
 import dealScreen from '../container/dealScreen';
-import productScreen from '../container/productScreen';
 import homeScreen from '../container/homeScreen';
+import myAccount from '../container/myAccount';
+import productScreen from '../container/productScreen';
 // import searchScreen from '../container/searchScreen';
 import salonDetail from '../container/salonDetail';
-import Icon from 'react-native-vector-icons/FontAwesome';
-
-import TabBar from '../components/TabBar';
-import myAccount from '../container/myAccount';
-import {colors} from '../constants/styles';
-import {Image, SafeAreaView} from 'react-native';
 import styles from './styles';
-import {connect} from 'react-redux';
-import {scale} from '../utils/scale';
+
 
 type BottomTabParams = {
   homeScreen: undefined;

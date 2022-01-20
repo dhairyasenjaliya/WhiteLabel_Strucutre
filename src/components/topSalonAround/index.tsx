@@ -1,9 +1,9 @@
 import React from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
-
-import styles from './style';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { connect } from 'react-redux';
 import images from '../../assets/images';
-import {connect} from 'react-redux';
+import styles from './style';
+
 
 const TopSalon = (props: any) => {
   const {appTheme} = props;

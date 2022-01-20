@@ -1,10 +1,9 @@
 import React from 'react';
-import {TouchableOpacity, Text, View} from 'react-native';
-import styles from './style';
+import { Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {scale} from '../../utils/scale';
-import {colors} from '../../constants/styles';
-import {color} from 'react-native-reanimated';
+import { colors } from '../../constants/styles';
+import { scale } from '../../utils/scale';
+import styles from './style';
 
 const CartAdd = (props: any) => {
   const {

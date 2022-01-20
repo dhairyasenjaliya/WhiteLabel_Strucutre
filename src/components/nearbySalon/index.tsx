@@ -1,9 +1,9 @@
 import React from 'react';
-import {Text, View, Image} from 'react-native';
-
-import styles from './style';
+import { Image, Text, View } from 'react-native';
+import { connect } from 'react-redux';
 import images from '../../assets/images';
-import {connect} from 'react-redux';
+import styles from './style';
+
 
 const NearbySalon = (props: any) => {
   const {appTheme, data = ''} = props;

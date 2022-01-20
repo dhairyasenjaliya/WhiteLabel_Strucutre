@@ -1,38 +1,27 @@
+import Moment from 'moment';
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  TouchableOpacity,
-  Text,
-  Image,
-  Linking,
-  Platform,
-  FlatList,
-  Alert,
-  ActivityIndicator,
+    ActivityIndicator, FlatList, Image,
+    Linking,
+    Platform, SafeAreaView,
+    ScrollView, Text, TouchableOpacity, View
 } from 'react-native';
-import Moment from 'moment';
 import RBSheet from 'react-native-raw-bottom-sheet';
-
-import FastImage from 'react-native-fast-image';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { connect } from 'react-redux';
+import images from '../../assets/images';
+import CustomButton from '../../components/Button';
+import ScreenHeader from '../../components/ScreenHeader';
+import { colors } from '../../constants/styles';
+import {
+    getAllOrder, getAppointmentDetail, getOrderHistoryDetail, orderCancle
+} from '../../store/orderList/actions';
+import { scale } from '../../utils/scale';
 // import { colors, fonts } from '../../constants/styles';
 // import { scale } from '../../utils/scale';
 import styles from './style';
-import ScreenHeader from '../../components/ScreenHeader';
-import {connect} from 'react-redux';
-import CustomButton from '../../components/Button';
 
-import {scale} from '../../utils/scale';
-import {
-  getAppointmentDetail,
-  getAllOrder,
-  orderCancle,
-  getOrderHistoryDetail,
-} from '../../store/orderList/actions';
-import images from '../../assets/images';
-import {colors} from '../../constants/styles';
+
 
 interface IProps {
   appTheme: Object;

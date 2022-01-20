@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {API} from '../store/responseHandle/type';
-import {apiError, apiStart, apiEnd} from '../store/responseHandle/api';
+import { apiEnd, apiError, apiStart } from '../store/responseHandle/api';
+import { API } from '../store/responseHandle/type';
 
 const apiMiddleware = ({dispatch}: any) => (next: any) => (action: any) => {
   next(action);

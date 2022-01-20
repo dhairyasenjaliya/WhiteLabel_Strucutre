@@ -1,59 +1,37 @@
+import Moment from 'moment';
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  TouchableOpacity,
-  Text,
-  Image,
-  Linking,
-  Platform,
-  FlatList,
-  Alert,
-  StatusBar,
-  ActivityIndicator,
+    ActivityIndicator, FlatList, Image, ScrollView, StatusBar, Text, TouchableOpacity, View
 } from 'react-native';
-import FastImage from 'react-native-fast-image';
-import RBSheet from 'react-native-raw-bottom-sheet';
-import TopStylist from '../../components/topStylist';
-
-import LinearGradient from 'react-native-linear-gradient';
-import Moment from 'moment';
 import CalendarStrip from 'react-native-calendar-strip';
-
+import FastImage from 'react-native-fast-image';
+import LinearGradient from 'react-native-linear-gradient';
+import RBSheet from 'react-native-raw-bottom-sheet';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import styles from './style';
 // import ScreenHeader from '../../components/ScreenHeader';
-import {connect} from 'react-redux';
-import {getMyDealDetail} from '../../store/dealList/actions';
-import {getAllOrder} from '../../store/orderList/actions';
-
-import images from '../../assets/images';
+import { connect } from 'react-redux';
 import CustomButton from '../../components/Button';
-
+import TopStylist from '../../components/topStylist';
+import { colors } from '../../constants/styles';
 import {
-  getAvailableTimeSlot,
-  addStylist,
-  addSelectedDate,
-  addSelectedTime,
-  addServiceAPI,
-  addServiceInCart,
-  addServiceUuidMaster,
-  getAvailableStylist,
-  getAvailableDateSlot,
+    addSelectedDate,
+    addSelectedTime,
+    addServiceAPI,
+    addServiceInCart,
+    addServiceUuidMaster, addStylist, getAvailableDateSlot, getAvailableStylist, getAvailableTimeSlot
 } from '../../store/cartList/actions';
+import { getMyDealDetail } from '../../store/dealList/actions';
+import { getAllOrder } from '../../store/orderList/actions';
 import {
-  viewScheduleCart,
-  getAddableServie,
-  addScheduleAPI,
-  removeScheduleAPI,
-  appointmentCheckout,
-  appointmentCancel,
+    addScheduleAPI, appointmentCancel, appointmentCheckout, getAddableServie, removeScheduleAPI, viewScheduleCart
 } from '../../store/scheduleCheckout/actions';
+import { scale } from '../../utils/scale';
+import styles from './style';
 
-import {colors} from '../../constants/styles';
-import {scale} from '../../utils/scale';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+
+
+
+
 
 interface IProps {
   appTheme: Object;

@@ -1,10 +1,9 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, StatusBar} from 'react-native';
-
-import styles from './style';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { connect } from 'react-redux';
 import images from '../../assets/images';
-import {connect} from 'react-redux';
-import * as RootNavigation from '../../navigation/rootNavigation';
+import styles from './style';
+
 
 const HomeScreenHeader = (props: any) => {
   const {data, onPress, appTheme, name} = props;

@@ -1,27 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import {
-  View,
-  Text,
-  SectionList,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  Animated,
-  FlatList,
-  RefreshControl,
-  StatusBar,
+    Animated,
+    FlatList, Image, ScrollView, StatusBar, Text, TouchableOpacity, View
 } from 'react-native';
-import images from '../../assets/images';
-import styles from './style';
-// import SplashScreen from 'react-native-splash-screen';
-import {connect} from 'react-redux';
-// import {FlatList} from 'react-native-gesture-handler';
-import {scale, screenHeight} from '../../utils/scale';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import FastImage from 'react-native-fast-image';
 import LinearGradient from 'react-native-linear-gradient';
-import {colors} from '../../constants/styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
+// import SplashScreen from 'react-native-splash-screen';
+import { connect } from 'react-redux';
+import images from '../../assets/images';
 import ErrorHandle from '../../components/errorHandle';
+import { colors } from '../../constants/styles';
+// import {FlatList} from 'react-native-gesture-handler';
+import { scale, screenHeight } from '../../utils/scale';
+import styles from './style';
 
 const FadeInView = (props) => {
   const [fadeAnim] = useState(new Animated.Value(0)); // Initial value for opacity: 0
