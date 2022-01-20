@@ -7,15 +7,10 @@ import { colors } from '../../constants/styles';
 
 const GRAPH_MARGIN = 20;
 const GRAPH_BAR_WIDTH = 20;
-const colorss = {
-  // axis: '#E4E4E4',
-  bars: colors.orangeText,
-};
 
 const BarChart = (props: any) => {
-  const {appTheme, unit = '', round = '', dataSend = ''} = props;
+  const {appTheme, round = '', dataSend = ''} = props;
   // const {name = '', type = '', bookingDate = ''} = data.item;
-  let theme = appTheme.theme;
   // Dimensions
   const SVGHeight = 250;
   const SVGWidth = 300;
@@ -36,7 +31,6 @@ const BarChart = (props: any) => {
   const y = d3.scaleLinear().domain(yDomain).range(yRange);
 
   // top axis and middle axis
-  const middleValue = topValue / 2;
 
   return (
     <Svg width={SVGWidth} height={SVGHeight} style={{}}>

@@ -703,9 +703,10 @@ class Appointmentdetails extends React.Component<IProps, IState> {
                     styles.detailValue,
                     {color: theme.PRIMARY_TEXT_COLOR},
                   ]}>
-                  {` ${Moment(date).format('DD MMM YYYY')} at ${
-                    hour + minute + ` ` + AmOrPm
-                  }  `}
+                  {` ${Moment(date).format('DD MMM YYYY')} at ${hour +
+                    minute +
+                    ` ` +
+                    AmOrPm}  `}
                 </Text>
               </View>
               <View>
@@ -926,7 +927,7 @@ class Appointmentdetails extends React.Component<IProps, IState> {
 
             {/* Services List */}
             <RBSheet
-              ref={(ref) => {
+              ref={ref => {
                 this.RBSheet = ref;
               }}
               onClose={() => {}}
@@ -957,8 +958,11 @@ const mapStatsToProps = ({appTheme = '', orderList = [], user = []}) => ({
   user,
 });
 
-export default connect(mapStatsToProps, {
-  getAppointmentDetail,
-  getAllOrder,
-  orderCancle,
-})(Appointmentdetails);
+export default connect(
+  mapStatsToProps,
+  {
+    getAppointmentDetail,
+    getAllOrder,
+    orderCancle,
+  },
+)(Appointmentdetails);
