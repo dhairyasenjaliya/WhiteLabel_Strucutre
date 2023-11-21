@@ -53,9 +53,9 @@ class Onboading extends React.Component<IProps, IState> {
   }
 
   componentDidMount() {
-    // Mixpanel.sharedInstanceWithToken('2b3821f2c87daf3069932d75673d98f8');
+    // Mixpanel.sharedInstanceWithToken('f8');
     Sentry.init({
-      dsn: 'https://7e6ed2fbd6e44184bd7c7318dccd71e0@sentry.io/5171584',
+      dsn: 'https:// ',
     });
     // Sentry.captureMessage('TEST ME Sample App');
 
