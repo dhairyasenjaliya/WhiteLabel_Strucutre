@@ -2,7 +2,7 @@ import { Platform, StyleSheet } from 'react-native';
 import { colors, fonts } from '../../constants/styles';
 import { scale } from '../../utils/scale';
 
-export default StyleSheet.create({
+export default .create({
   container: {
     flex: 1,
     backgroundColor: colors.screenBackground,

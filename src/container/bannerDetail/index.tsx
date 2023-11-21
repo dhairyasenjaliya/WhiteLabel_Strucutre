@@ -68,7 +68,7 @@ class BannerDetail extends React.Component<IProps, IState> {
           <View style={styles.contentContain}>
             <Text
               style={[styles.mainTitleText, {color: theme.PRIMARY_TEXT_COLOR}]}>
-              GoBony Shield Score
+              Sample App Shield Score
             </Text>
             <Text style={[styles.subTitleText]}>
               Salons with best sanitisation standard near you

@@ -1,9 +1,9 @@
 {
   "project_info": {
     "project_number": "586408751421",
-    "firebase_url": "https://gobony-firebase.firebaseio.com",
-    "project_id": "gobony-firebase",
-    "storage_bucket": "gobony-firebase.appspot.com"
+    "firebase_url": "https://Sample App-firebase.firebaseio.com",
+    "project_id": "Sample App-firebase",
+    "storage_bucket": "Sample App-firebase.appspot.com"
   },
   "client": [
     {

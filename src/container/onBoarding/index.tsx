@@ -57,7 +57,7 @@ class Onboading extends React.Component<IProps, IState> {
     Sentry.init({
       dsn: 'https://7e6ed2fbd6e44184bd7c7318dccd71e0@sentry.io/5171584',
     });
-    // Sentry.captureMessage('TEST ME GOBONY');
+    // Sentry.captureMessage('TEST ME Sample App');
 
     const {authToken} = this.props && this.props.user;
     setTimeout(() => {

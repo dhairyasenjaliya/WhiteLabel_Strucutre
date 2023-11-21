@@ -53,9 +53,9 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>GoBony app needs to Know Your Location in order to fetch nearby salon's</string>
+	<string>Sample App app needs to Know Your Location in order to fetch nearby salon's</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>GoBony app needs to Know Your Location in order to fetch nearby salon's</string>
+	<string>Sample App app needs to Know Your Location in order to fetch nearby salon's</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>HelveticaNeueCondensedBold.ttf</string>

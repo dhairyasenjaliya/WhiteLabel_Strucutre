@@ -20,7 +20,7 @@ export default StyleSheet.create({
     padding: scale(5),
     marginTop: scale(13),
   },
-  gobonyImage: {
+  Sample AppImage: {
     marginVertical: SCREENHEIGHT > 700 ? scale(10) : scale(20),
   },
   title: {

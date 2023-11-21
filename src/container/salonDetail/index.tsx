@@ -78,8 +78,8 @@ const pickerStyleDark = {
 };
 
 const offersData = [
-  {offerDiscount: '30%', offerDetils: 'GOBONY30'},
-  {offerDiscount: '20%', offerDetils: 'GOBONY20'},
+  {offerDiscount: '30%', offerDetils: 'Sample App30'},
+  {offerDiscount: '20%', offerDetils: 'Sample App20'},
 ];
 
 // const fill = 'rgb(134, 65, 255)';
@@ -303,8 +303,8 @@ class salonDetail extends React.Component<IProps, IState> {
       style={[
         styles.container,
         {
-          backgroundColor: this.props.appTheme.theme
-            .PRIMARY_BACKGROUND_COLOR_LIGHT,
+          backgroundColor:
+            this.props.appTheme.theme.PRIMARY_BACKGROUND_COLOR_LIGHT,
         },
       ]}>
       <FlatList
@@ -334,8 +334,8 @@ class salonDetail extends React.Component<IProps, IState> {
       style={[
         styles.container,
         {
-          backgroundColor: this.props.appTheme.theme
-            .PRIMARY_BACKGROUND_COLOR_LIGHT,
+          backgroundColor:
+            this.props.appTheme.theme.PRIMARY_BACKGROUND_COLOR_LIGHT,
         },
       ]}>
       <FlatList

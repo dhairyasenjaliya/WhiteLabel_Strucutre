@@ -2,7 +2,15 @@
 import axios from 'axios';
 import React from 'react';
 import {
-    Animated, FlatList, Image, Platform, ScrollView, StatusBar, Text, TouchableOpacity, View
+  Animated,
+  FlatList,
+  Image,
+  Platform,
+  ScrollView,
+  StatusBar,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import codePush from 'react-native-code-push';
 import FastImage from 'react-native-fast-image';
@@ -13,12 +21,12 @@ import RNPickerSelect from 'react-native-picker-select';
 // import SplashScreen from 'react-native-splash-screen';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import RadioForm, {
-    RadioButton,
-    RadioButtonInput,
-    RadioButtonLabel
+  RadioButton,
+  RadioButtonInput,
+  RadioButtonLabel,
 } from 'react-native-simple-radio-button';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import images from '../../assets/images';
 import MadeByStyle from '../../assets/svg/live.svg';
 import BookAgain from '../../components/bookAgainComponent';
@@ -33,22 +41,19 @@ import SuggestServices from '../../components/suggestedServices';
 import SwipeablePanel from '../../components/SwipeablePanel';
 import TopSalon from '../../components/topSalonAround';
 import TopStylist from '../../components/topStylist';
-import { colors } from '../../constants/styles';
-import { fetchAlgoliaConfig } from '../../store/algoliaConfig/actions';
+import {colors} from '../../constants/styles';
+import {fetchAlgoliaConfig} from '../../store/algoliaConfig/actions';
 import {
-    getAllDealList,
-    getDealTag,
-    getFavouriteDeal
+  getAllDealList,
+  getDealTag,
+  getFavouriteDeal,
 } from '../../store/dealList/actions';
-import { getAllOrder, getAllOrderHistory } from '../../store/orderList/actions';
-import { fetchSalonDetails } from '../../store/salonDetail/actions';
+import {getAllOrder, getAllOrderHistory} from '../../store/orderList/actions';
+import {fetchSalonDetails} from '../../store/salonDetail/actions';
 import analyticsManager from '../../utils/analytics-manager';
-import { OneSignalId } from '../../utils/api-configuration';
-import { scale } from '../../utils/scale';
+import {OneSignalId} from '../../utils/api-configuration';
+import {scale} from '../../utils/scale';
 import styles from './style';
-
-
-
 
 const codePushOptions = {checkFrequency: codePush.CheckFrequency.ON_APP_RESUME};
 
@@ -1129,7 +1134,9 @@ class homeScreen extends React.Component<Props, State> {
                   </Text>
                 </TouchableOpacity>
               </View>
-              <Text style={styles.shieldScoreText}>GoBony Shield Score</Text>
+              <Text style={styles.shieldScoreText}>
+                Sample App Shield Score
+              </Text>
             </View>
 
             {/* Salon Name End*/}
@@ -1413,7 +1420,7 @@ class homeScreen extends React.Component<Props, State> {
               </View>
               {/* <View>
                 <Text style={styles.madeByText}>
-                  MADE BY STYLE ENTHUSIASTS{'\n'}GOBONY HQ, GURGAON
+                  MADE BY STYLE ENTHUSIASTS{'\n'}Sample App HQ, GURGAON
                 </Text>
               </View> */}
             </View>

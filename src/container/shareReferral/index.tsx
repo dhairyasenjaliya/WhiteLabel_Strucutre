@@ -35,8 +35,8 @@ class ShareReferral extends React.Component<IProps, IState> {
         </TouchableOpacity>
         <View style={{alignItems: 'center'}}>
           <Image
-            source={require('../../assets/referral/gobony.png')}
-            style={styles.gobonyImage}
+            source={require('../../assets/referral/Sample App.png')}
+            style={styles.Sample AppImage}
           />
           <Text
             style={[

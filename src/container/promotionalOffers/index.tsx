@@ -134,7 +134,7 @@ class PromotionalOffers extends React.Component<IProps, IState> {
           styles.couponView,
           {backgroundColor: theme.PRIMARY_BACKGROUND_COLOR_LIGHT},
         ]}>
-        <Text style={styles.couponText}>{`GOBONY30`}</Text>
+        <Text style={styles.couponText}>{`Sample App30`}</Text>
       </View>
     );
   };
